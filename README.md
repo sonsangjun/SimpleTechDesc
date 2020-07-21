@@ -1,1 +1,3 @@
-# SimpleTechDesc
+# 기술적인 내용 기술
+
+>구체적인 정보는 Wiki 참고하세요.
