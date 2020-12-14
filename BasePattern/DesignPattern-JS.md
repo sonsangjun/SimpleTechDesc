@@ -1,5 +1,6 @@
 # Javascript패턴
 > 참고 : https://itstory.tk/entry/%EA%BC%AD-%EC%95%8C%EC%95%84%EC%95%BC%ED%95%98%EB%8A%94-Javascript-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-4%EA%B0%80%EC%A7%80 <br>
+> 참고(https://riptutorial.com/ko/javascript/example/5966/%ED%94%84%EB%A1%9C%ED%86%A0-%ED%83%80%EC%9E%85-%ED%8C%A8%ED%84%B4 <br>
 > <br>
 대표적으로 4가지가 존재.   
 <br>
@@ -40,6 +41,7 @@ funObj.getAaa(); //==> '1212';
 
 ```
 <br>
+
 > 추가로 **Revealing Module Pattern** 이 있는데, 나중에 읽어보기   
 
 
@@ -67,8 +69,9 @@ DefiedObj.prototype.echoId = function(){
 }
 
 var inst = new DefiedObj('1234');
-inst.callId();
-inst.echoId();
+
+console.log('Defined :',inst.callId());
+console.log('Defined :',inst.echoId());
 
 
 ```
@@ -76,6 +79,24 @@ inst.echoId();
 > prototype정의후, 상속
 
 ```javascript
+
+// Child에게 상속
+function ChildObj(initId){
+    this.id = initId;
+}
+
+ChildObj.eatId = function(){
+    return 'eat : ' + this.id;
+}
+
+ChildObj.prototype = Object.create(DefiedObj.prototype);
+var chInst = new ChildObj('4321');
+console.log('Child :', chInst.callId());
+console.log('Child :', chInst.echoId());
+
+// Object생성시 삽입한 id를 child의 prototype에서 접근이 가능
+// 표준으로 prototype한개 맹글어놓고,   
+// 그걸 여기저기서 상속받으면 같은 Method기능을 그대로 사용할 수 있다.
 
 ```
 
