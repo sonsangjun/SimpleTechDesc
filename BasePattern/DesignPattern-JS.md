@@ -105,11 +105,115 @@ console.log('Child :', chInst.echoId());
 
 
 **Observer**   
+> 참고 : https://medium.com/@yeon22/design-pattern-observer-pattern-%EC%9D%B4%EB%9E%80-ef4b74303359 <br>
+> <br>
+> Angular9으로 UI개발시, Observable Class를 사용했는데, Observable<any>를 return받으면   
+> 항상 subscribe Method로 성공/실패시 callback처리를 정의했다.   
+> 그 subscribe개념이 여기 패턴에서 설명되는 걸로 보아,   
+> 옵저버 패턴의 개념을 기반으로 lib가 개발된 것 같다.   
+> <br>
+> 옵저버 패턴이 정말 와닿지 않았는데, 2020년에 WebUI로 Angular9과 typescript를 만지다보니   
+> 자연스레 이해가 되었다. 하도 Observable객체를 만들어 써제낀덕분에   
+    
+```javascript
+// Angular9에서 rxjs를 import하고, typescript로 작성할 시.
+
+// getInfo from apiCaller
+public getInfo() : void {
+    this.ui.block.show();
+    resultCall : Observable<any> = this.callApi();
+
+    // resultCall 1회차
+    resultCall.subscribe(
+        (res:any)=>{
+            this.ui.block.hide();
+            console.log('call success',res);
+        },
+        (error:any)=>{
+            this.ui.block.hide();
+            console.error('call fail',error);
+        }
+    );
+
+    // resultCall 2회차
+    resultCall.subscribe(
+        (res.any)=>{
+            console.log('2nd call success',res);
+        },
+        (error:any)=>{
+            console.error('2nd call fail',res);
+        }
+    );
+}
+
+// defined apiCall 
+private callApi() : Observable<any> {
+    return Observable<any>(observer=>{
+       this.api.call().then((res)=>{
+           observer.next(res);
+       }).catch((error)=>{
+           observer.error(error);
+       });
+    });
+}
+
+```
+
+> 자바스크립트로 rxjs없이 작성한다면, addEventLisner란 Method를 통해   
+> 작성할 수 있다.   
+> Object Class를 하나 정의하고, prototype으로 regist/unRegit 두 Method를 생성한다.   
+> Observer를 여러개 등록하고, 등록된 Observer들에게 변경사항이 존재시, notify를 한다.   
+
+```javascript
+
+// 이것은 prototype Pattern에 대한 이해가 없으면 
+// 이해에 어려움을 겪을 수 있다.
+
+function Subject(){
+    this.arr=[];
+}
+
+// prototype에 등록/해제/알림 표준정의
+Subject.prototype = {
+    unReg : function(ob){
+        // filter에 arrowFunc을 사용해. redOb!==ob인것만 추려서 다시 
+        // arr를 설정
+        this.arr = this.arr.filter(redOb=>redOb!==ob);
+    },
+    reg : function(ob){
+        this.arr.push(ob);
+    },
+
+    notifyToOb : function(data){
+        this.arr.forEach(ob=>ob.notify(data));
+    }
+}
+
+const sub = new Subject();
+const obs = {
+    ob1 : {
+        notify : data=> console.log('ob1',data)
+    },
+    ob2 : {
+        notify : data=> console.log('ob2',data)
+    }
+};
+
+sub.reg(obs.ob1);
+sub.reg(obs.ob2);
+sub.notifyToOb('okay!');
+
+
+```
+
 <br>
 
 
 
 **Singleton**   
+> singleton을 주로 Java에서만 사용했는데,   
+> 개념만 알고 있으면 js말고도 여러곳에서 사용할 수 있다.   
+> 결국은 사용할 객체를 1개만 만드는 거니까   
 <br>
 
 
