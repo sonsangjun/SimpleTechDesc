@@ -51,7 +51,7 @@ Obj objInstance = Obj.getInstance();
     Delegate(델리게이트)
     interface를 implements한 Class가 구현을 하도록 유도(강제)하고
     
-    Class의 instance에서 interface의 함수를 호출하면 interface가 직접일하는게아니라.
+    Class의 instance에서 interface의 함수가 호출되면, interface가 직접일하는게아니라.
     interface를 구현한 instance가 일하는 것을 '대리자/델리게이트'라고 한다.
 
 **/
