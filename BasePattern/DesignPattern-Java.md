@@ -1,5 +1,6 @@
 # 디자인 패턴
 > 참고 : https://gmlwjd9405.github.io/2018/07/06/design-pattern.html <br>
+> 참고(생성패턴) : https://tech-people.github.io/2020/01/08/java-design-pattern-creational/ <br>
 > <br>
 > 2020년 프로젝트 진행하면서 가장 많이 썼던 디자인 패턴이 **singleTonPattern**이다.   
 > <br>
@@ -8,6 +9,14 @@
 ## SingleTon
 > 딱 한개만 만들어 사용해도 상관없을때(메모리 낭비, 잦은GC호출방지)   
 > 참고(SingleTon생성을 JVM에게 떠넘김) : https://jeong-pro.tistory.com/86 <br>
+> <br>
+> singleton의 문제점으로 지목한게, 상속불가, 전역공유문제, 싱글턴보장불확실이 있는데   
+> 그 중, **싱글턴보장불확실**은 JVM이 처리할테구.   
+> **상속불가**는 애초에 상속안받을 생각으로 설계 및 생성하지 않을까 싶다.   
+> **전역공유문제**는 문제긴 하네. 어디서든 객체를 가져오면 그 안의 변수를 접근할 수 있으니.   
+> 최대한 전역공유는 피하는 수밖에.   
+
+
 ```java
 // ObjSingleton은 클래스 안에 클래스(Holder)을 두는 방법
 // 가장 많이 사용하는 방식이라는데, 실제 솔루션측의 코드를 봐도 그런것 같다.
@@ -26,8 +35,8 @@ public class Obj {
 
 // 다른 클래스에서 사용할 때,
 ...
-
 Obj objInstance = Obj.getInstance();
+...
 
 ```
 
