@@ -31,8 +31,90 @@ Obj objInstance = Obj.getInstance();
 
 ```
 
-## FactoryMethod
-> 클래스의 객체 생성을 위한 인터페이스를 제공하되,   
-> 하위 클래스에서 어떤 클래스를 생성할지 결정할 수 있도록 도와준다...?   
+<br><br>
 
+## Strategy Pattern(전략패턴)
+> 참고 : https://wiserloner.tistory.com/461 <br>
+> 참고 : https://niceman.tistory.com/133 <br>
+> 하나만 읽어서는 감이 오지 않는데,   
+> 여러개를 읽으니 조금 감이 온다.   
+> 샘플이지만, 정말 이렇게 인스턴스를 교체해서 사용하나...?   
+> 라는 생각이 들지만, 우리가 모르는 사이에 이미 이렇게 쓰고 있을지도 모르겠다.   
+> <br>
+> **하나의 추상적인 접근점(인터페이스)을 만들어 접근점에서 서로 인스턴스를 교환**   
+> 이 문구가 처음보면 와닿지 않은데, 위의 2개 참고 사이트를 읽어보면 의미가 와닿는다.   
+
+```java
+
+/** interface mover **/
+public interface Mover {
+    public void moving();
+}
+
+/** *********************************************/
+/** mover를 구현하라 **/
+class GoMover implements Mover {
+    @Override
+    public void moving() {
+        System.out.println("Go!");
+    }
+}
+
+class BackMover implements Mover {
+    @Override
+    public void moving() {
+        System.out.println("Back!");
+    }
+}
+
+class StopMover implements Mover {
+    @Override
+    public void moving() {
+        System.out.println("Stop!");
+    }
+}
+
+/** *********************************************/
+/** Mover의 몸통? */
+public class Team {
+    private Mover mover;
+    
+    public Team(Mover mover) {
+        this.mover = mover;
+    }
+    
+    public callMoving(){
+        mover.moving();
+    }
+    
+    /** 여기가 설명에서 얘기하던 '접근점'이 아닐까 싶다. */
+    public setMover(Mover mover){
+        this.mover = mover;
+    }
+}
+
+/** *********************************************/
+/** main */
+public static void main(String[] args){
+    Team team = new Team(new GoMover());
+    
+    team.callMoving();
+    
+    // Back으로 바꿔치기
+    team.setMover(new BackMover());
+    team.callMoving();
+    
+    // Stop으로 바꿔치기
+    team.setMover(new StopMover());
+    team.callMoving();
+}
+
+// 결과
+/*
+    "Go!"
+    "Back!"
+    "Stop!"
+
+*/
+```
 
