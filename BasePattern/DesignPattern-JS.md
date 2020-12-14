@@ -216,5 +216,40 @@ sub.notifyToOb('okay!');
 > 결국은 사용할 객체를 1개만 만드는 거니까   
 <br>
 
+```javascript
 
+// let instObj; // chromeDev에서 테스트시 한번만 declare할 것.
+
+instObj = (function(){
+    let inst;
+    let id;
+
+    function init(){
+        return {
+            getId : function(){ return this.id; },
+            setId : function(sId){ this.id = sId;}
+        }
+    }
+
+    return {
+        getInstance : function(){
+            if(!inst){
+                inst = init();
+            }
+            return inst;
+        }
+    }
+})();
+
+var inst1 = instObj.getInstance();
+var inst2 = instObj.getInstance();
+
+console.log('equal?',inst1===inst2);
+console.log('setId',instObj.getInstance().setId('1234'));
+console.log('getId',instObj.getInstance().getId());
+
+```
+
+> java든, javascript간에 호출 타이밍으로 인해 instance가 두개생성되는 건 걱정해야한다.   
+> java야 JVM에게 떠넘기면 그만이지만, javascript는...   
 
