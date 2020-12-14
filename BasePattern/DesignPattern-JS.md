@@ -3,8 +3,10 @@
 > <br>
 대표적으로 4가지가 존재.   
 <br>
-**Module
-Prototype
-Observer
-Singleton**
+
+**Module   
+Prototype   
+Observer   
+Singleton**   
+
 <br>
