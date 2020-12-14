@@ -219,6 +219,7 @@ sub.notifyToOb('okay!');
 ```javascript
 
 // let instObj; // chromeDev에서 테스트시 한번만 declare할 것.
+// 혹은 아래 코드를 즉시실행함수로 감싼후 실행할 것( (function(){...})(); )
 
 instObj = (function(){
     let inst;
