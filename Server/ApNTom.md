@@ -1,5 +1,10 @@
 # 아파치와 톰캣
 > 웹서버 아파치, WAS 톰캣   
+> 참고(AJP) :    
+> https://iam-song.tistory.com/74 <br>
+> https://ehdvudee.tistory.com/20 <br>
+> AJP : 아파치 Jserv 프로토콜, WebServer에서 WebApplicationServer로 바이너리 전송 약속이다.  
+
 
 <br>
 
