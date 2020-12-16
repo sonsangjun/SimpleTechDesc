@@ -57,7 +57,8 @@
 
 #### runtimeOnly :   
 > runtime시에만 필요한 라이브러리.   
-> 찾아보니, 전부 runtime시에만 필요하다는데, 빌드할때는 필요없고, 실행할때만 필요하다는 거라 생각하면...?   
-> 그런의미라면, 빌드시에는 참고하지 않고, 프로그램이 실행 중에 어디선가 lib를 참고하겠다라는 말인데   
-> 이 옵션은 실제 적용해보고, gradle build를 테스트 해봐야 알 것 같다.   
-
+> 말그대로, runtime동안 필요한 라이브러리.   
+> gradle build 결과물에 lib는 같이 들어가 있다.   
+> compileOnly는 컴파일중에만 참고하고, 빌드산출물(war등)에 포함을 안하는데 반해   
+> runtimeOnly는 컴파일중에는 모르겠고, 빌드산출물에는 포함시킨다. 실행중에 참조는 해야하니까   
+> (실제 로컬PC의 프로젝트에서 lib하나 멱살잡고 compileOnly, implementation, api, runtimeOnly 모두 바꿔가며 gradle clean build 를 진행하고 내린 결론)   
