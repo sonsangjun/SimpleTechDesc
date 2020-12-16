@@ -157,4 +157,4 @@ publishing{
 > gradle build 결과물에 lib는 같이 들어가 있다.   
 > compileOnly는 컴파일중에만 참고하고, 빌드산출물(war등)에 포함을 안하는데 반해   
 > runtimeOnly는 컴파일중에는 모르겠고, 빌드산출물에는 포함시킨다. 실행중에 참조는 해야하니까   
-> (실제 로컬PC의 프로젝트에서 lib하나 멱살잡고 compileOnly, implementation, api, runtimeOnly 모두 바꿔가며 gradle clean build 를 진행하고 내린 결론)   
+> (실제 로컬PC의 프로젝트에서 lib하나 멱살잡고 compileOnly, implementation, api, runtimeOnly 모두 바꿔가며 gradle clean build 를 진행하고 내린 결론)    
