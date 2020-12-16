@@ -10,6 +10,7 @@
 > 딱 한개만 만들어 사용해도 상관없을때(메모리 낭비, 잦은GC호출방지)   
 > 참고(SingleTon생성을 JVM에게 떠넘김) : https://jeong-pro.tistory.com/86 <br>
 > 참고(상속) : https://peulblog.tistory.com/13 <br>
+> 참고(ThreadSafe) : https://medium.com/@joongwon/multi-thread-환경에서의-올바른-singleton-578d9511fd42 <br>
 > <br>
 > singleton의 문제점으로 지목한게, 상속불가, 전역공유문제, 싱글턴보장불확실이 있는데   
 > 그 중, **싱글턴보장불확실**은 JVM이 처리할테구.   
