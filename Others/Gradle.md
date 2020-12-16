@@ -2,6 +2,7 @@
 > 참고 : https://tjandroid.blogspot.com/2018/11/api-implementation.html <br>
 > 참고(기본설명) : https://medium.com/@goinhacker/%EC%9A%B4%EC%98%81-%EC%9E%90%EB%8F%99%ED%99%94-1-%EB%B9%8C%EB%93%9C-%EC%9E%90%EB%8F%99%ED%99%94-by-gradle-7630c0993d09 <br>
 > 참고(API vs implementation) : https://jongmin92.github.io/2019/05/09/Gradle/gradle-api-vs-implementation/ <br>
+> 참고 : https://writemylife.tistory.com/57 <br>
 > <br>
 > 
 ## runtimeOnly, implementation 등등
@@ -23,11 +24,33 @@
 
 #### api :   
 > 의존 라이브러리 수정시 해당 모듈을 의존하고 있는 모듈을 재빌드(이건 좀 알아먹겠는데)   
+<br>
+> A <- B <- C <- D < E <- ... (좀 극단적이긴 한데)   
+<br>
+> A모듈을 수정시, B아래로 싹 재빌드.   
+> 여기서 B가 본 모듈에 해당한다. A가 의존 라이브러리(A를 누가 의존하다.)
+> 싹 재빌드 했기 때문에, B아래로 다 A를 접근할 수 있다.   
 
 <br>
 
 #### compileOnly :   
+> complie 할때만 빌드하고, 빌드결과물(war, apk등등)에 포함하지 않음.   
+> 이거는 runtime에 lib가 제공되던가, 거기까지 호출하지는 않을거라 생각할 때,   
+> 사용할 옵션같은데,   
 
+> <br>
+
+> CommonProject, OneProject, TwoProject 3개의 프로젝트가 있고,   
+> OneProject, TwoProject에서 CommonProject의 빌드결과물(jar)을 포함한다고 할 때,   
+
+> <br>
+
+> One,Two Project에서 CommomProject의 compileOnly로 설정된 lib를 가지고 있는 경우가 있다.   
+> 이 경우, CommonProject에서 build결과물에 의존lib를 포함하는게 훨씬 덩치가 크므로,   
+> 경량화관점에서 보면 compileOnly옵션을 주는게 당연하다.   
+> (실제, CommonProject의 모든 lib를 One,Two Project에서 사용한다는 것도 아닐거고)   
 <br>
 
 #### runtimeOnly :   
+> runtime시에만 필요한 라이브러리.   
+> 
