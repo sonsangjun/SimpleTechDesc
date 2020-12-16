@@ -5,6 +5,102 @@
 > 참고 : https://writemylife.tistory.com/57 <br>
 > <br>
 > 
+
+## 큰 그림
+> 참고 : https://jwkim96.tistory.com/111 <br>
+> 참고(publishing) : https://docs.gradle.org/current/samples/sample_publishing_credentials.html <
+> Android의 gradle 세팅과는 조금 다르네.   
+> Android는 buildtype, flavor 이것저것 넣어서 세팅은 했는데   
+> WAS에 배포하는 프로젝트는 아래와 같이 큰 블록으로 나뉘어 있다.   
+
+```xml
+
+// 스프링부트를 사용하면, 필수 플러그인 4개가 추가되어야 하는 모양.
+// 그 중, 'java', 'eclipse'는 각각SDK,IDE성격으로 추가하고.
+// io.spring.dependency-management 는 스프링부트의 의존성을 관리하는 녀석
+// 위의 필수요소는 apply plugin 으로 정의하던가, 아래처럼 정의하면 된다.
+plugins {
+  id 'java'
+  id 'eclipse'
+  id 'java-library'
+}
+
+// 전역변수 설정
+ext {
+  javaVersion='1.8'
+  springVersion='4.3.25.RELEASE'
+}
+
+// 자바소스 위치 정의.
+// test는 작성한 Java코드의 테스트코드(jUnit등)의 위치
+// 따로 정의한 이유는 gradle build시, -x test 옵션을 통해 제외하기 위함도 있음.
+sourceSets {
+  main { java { srcDir '...(상대경로)...' }
+  test { java { srcDir '...(상대경로)...' }
+}
+
+// Javadoc뽑으면 한글 왕창깨지는데, 여기 옵션을 줘서 그걸 방지
+javadoc { 
+  source = sourceSets.main.allJava
+  options.addStringOption('encoding', 'UTF-8');
+}
+
+// 외부망이 붙지 않는 프로젝트는 아래처럼 제공된 repo주소를 입력하는데,   
+// 외부망이 붙는 프로젝트라면 "https://..." 대신,   
+// mavenCentral(), jcenter() 라 적을 것이다.
+repositories {
+  maven {
+    url "https://..(주소)../"
+  }
+}
+
+// 의존성 설정. 이 부분은 필요한 lib등등을 알맞게 정의하면 됨.
+// 각 옵션에 대한 설명은 하단 목차 참고.
+dependencies {
+  ...
+  compileOnly("com.ttt.j2obj");
+  ...
+
+  implementation("org.springframework:spring-aop:4.3.25.RELEASE");
+  ...
+
+  runtimeOnly("org.XXX...");
+  ...
+
+}
+
+// gradle 빌드후, 바로 배포하는 경우 아래 항목에 정의된 위치로 배포됨.
+// gradle clean build publish -x test의 publish에 해당
+// war대신, 공통으로 사용하는 jar를 build하는 프로젝트 옵션기준으로 작성됨.
+publishing{
+  publications {
+    mave(MavenPublication) {
+      groupId = myGroupId
+      artifactId = myArtifactId
+      version = artifactVersion
+
+      artifact('build/libs/' + artifactId + '-' + artifactVersion + 'jar') { extension 'jar' }
+    }
+  }
+
+  // username, password는 정의된 값이다. 
+  // gradle.properties에 정의되어 있는데, 주기적으로 변경되는 값이면
+  // 설정값을 서버에 두는게 아니라. 바뀌어도 배포주기에 영향을 주지않는 위치에 둬야할 것 같다.
+  // docs.gradle.org를 참고하면, 계정정보를 command상에서 줄수도 있는데, 
+  // 이러면 굳이 proerties파일을 바꾸지 않아도 될 것 같다.
+  repositories {
+    maven {
+      credentials {
+        username "$mavenUser"
+        password "$mavePassword"
+      }
+      url "https://...(배포할 주소)..."
+    }
+  }
+}
+
+```
+
 ## runtimeOnly, implementation 등등
 > 몰랐는데, dependencies 블록 정의시, 더 많은 옵션이 존재한다.   
 
