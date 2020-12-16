@@ -8,7 +8,7 @@
 
 ## 큰 그림
 > 참고 : https://jwkim96.tistory.com/111 <br>
-> 참고(publishing) : https://docs.gradle.org/current/samples/sample_publishing_credentials.html <
+> 참고(publishing) : https://docs.gradle.org/current/samples/sample_publishing_credentials.html <br>
 > Android의 gradle 세팅과는 조금 다르네.   
 > Android는 buildtype, flavor 이것저것 넣어서 세팅은 했는데   
 > WAS에 배포하는 프로젝트는 아래와 같이 큰 블록으로 나뉘어 있다.   
