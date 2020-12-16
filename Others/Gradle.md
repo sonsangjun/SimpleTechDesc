@@ -58,13 +58,13 @@ repositories {
 // 각 옵션에 대한 설명은 하단 목차 참고.
 dependencies {
   ...
-  compileOnly("com.ttt.j2obj");
+  compileOnly("com.ttt.j2obj:j2obj:1.0.0");
   ...
 
   implementation("org.springframework:spring-aop:4.3.25.RELEASE");
   ...
 
-  runtimeOnly("org.XXX...");
+  runtimeOnly("org.XXX:XXX:7.7.7");
   ...
 
 }
