@@ -6,6 +6,7 @@
 ## WebServer -> WAS로 돌리기
 > 참고 : https://www.lesstif.com/system-admin/apache-httpd-tomcat-connector-mod_jk-reverse-proxy-mod_proxy-12943367.html <br>
 > 참고(secret) : https://nirsa.tistory.com/158 <br>
+> 참고(rewrite) : http://httpd.apache.org/docs/2.0/misc/rewriteguide.html <br>
 > 웹서버로 들어온 요청을 WAS로 돌리는 설정이 가물가물해서 기록함.   
 > 핵심은 `<VirtualHost>`태그   
 > 참고 사이트를 읽어보니, mod_jk말고 mod_proxy 연결방식도 있다.   
@@ -17,7 +18,8 @@
 
 > mod_jk기준으로 작성   
 
-### httpd.conf
+### Apache 설정
+#### httpd.conf
 
 ```xml
 ...
@@ -33,7 +35,7 @@ Include conf/extra/httpd-vhosts.conf
 
 ```
 
-### mod_jk.conf
+#### mod_jk.conf
 
 ```xml
 
@@ -59,7 +61,7 @@ LoadModule jk_module modules/mod_jk.so
 ```
 
 
-### workers.properties
+#### workers.properties
 > 어떤 요청에 대해 tomcat과 연계할 지 정의.   
 > 아래 예시는, 이중화가 아닌, 서로 다른 톰캣을 연계(포트로 구분)   
 
@@ -84,7 +86,7 @@ worker.worker1.secret=PasswOrd
 
 ```
 
-### uriworkermap.properties
+#### uriworkermap.properties
 > 각 요청에 대한 worker의 동작을 정의
 > 아래는 /shield로 시작하는 요청은 worker2로   
 > 나머지는 worker1으로 보내라는 정의다.   
@@ -96,9 +98,10 @@ worker.worker1.secret=PasswOrd
 ```
 
 
-### httpd-vhosts.conf
+#### httpd-vhosts.conf
 > 파일명은 의미를 부여해 작성   
 > 따로 정의하지 않고, httpd.conf에 정의해도 된다.   
+> Rewrite는 참고문서 확인하기   
 
 ```xml
 ...
@@ -108,10 +111,37 @@ worker.worker1.secret=PasswOrd
   ProxyRequests Off
   
   # redirect to 443 port
+  # rewrite설정(Url을 조작)
+  <IfModule mod_rewrite.c>
+    ReWriteEngine On
+    ReWriteCond %{HTTPS} off
+    ReWriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+  </IfModule>
   
-  
-  
+  # Connect to Tomcat
+  JkMountFile conf/uriworkermap.properties
+</VirtualHost>
 
+...
+
+```
+
+### tomcat 설정
+> server.xml 수정   
+
+#### server.xml
+> 속성이 직관적이라 따로 설명은 필요없어 보인다.   
+> 추가로, 8209포트를 바라보는 서버도 아래와 같이 세팅하면 된다.   
+```xml
+...
+
+<Connector protocal="AJP/1.3"
+           address="10.10.20.100"
+           port="8009"
+           secret="PasswOrd"
+           secretRequired="true"
+           URIEncoding="EUC-KR"
+           rediectPort="8443" />
 
 ...
 
