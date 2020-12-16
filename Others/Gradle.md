@@ -57,15 +57,15 @@ repositories {
 // 의존성 설정. 이 부분은 필요한 lib등등을 알맞게 정의하면 됨.
 // 각 옵션에 대한 설명은 하단 목차 참고.
 dependencies {
-  ...
+  //...
   compileOnly("com.ttt.j2obj:j2obj:1.0.0");
-  ...
+  //...
 
   implementation("org.springframework:spring-aop:4.3.25.RELEASE");
-  ...
+  //...
 
   runtimeOnly("org.XXX:XXX:7.7.7");
-  ...
+  //...
 
 }
 
@@ -74,7 +74,7 @@ dependencies {
 // war대신, 공통으로 사용하는 jar를 build하는 프로젝트 옵션기준으로 작성됨.
 publishing{
   publications {
-    mave(MavenPublication) {
+    maven(MavenPublication) {
       groupId = myGroupId
       artifactId = myArtifactId
       version = artifactVersion
