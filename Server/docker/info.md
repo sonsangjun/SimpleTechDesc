@@ -76,11 +76,23 @@
    
 4. Docker run
    
-   nodejs기준.
-   docker run --rm -d autobit:1.0
-   
+   // nodejs기준. ==> 이걸로 실행하지말고,
+   docker run --rm -d autobit:1.0 
    nodejs로 설정된 프로젝트를 띄울시, -d옵션을 주지 않으면 헤어나올수 없다.
    포그라운드로 띄우니까 컨트롤C도 안먹고 식겁했다.
    (물론, 그래도 나올 방법은 있겠지만, 난 모르겠다.)
+   
+   서버가 동작하고, 접근하기 위해서는 그 컨테이너의 고유IP를 확인해야한다.
+   
+   
+   // 아래 명령어로 기동할 것
+   // (참고) http://labs.brandi.co.kr/2018/05/25/kangww.html (nodejs클러스터링)
+   docker create --name autobit -p 8001:8001 autobit:1.0
+   docker start autobit
+   
+   docker ps로 확인시 autobit가 활성화 된 걸 확인할 수 있고, listenPost가 0.0.0.0:8001인걸 확인할 수 있다.
+   이러면 외부에서 linux서버IP로 접근이 가능하다.
+   
+   docker stop도 docker run으로 띄운것과 동일하게 docker ps목록에 나타난 CONTAINER ID로 죽일 수 있다.
 
 ```
