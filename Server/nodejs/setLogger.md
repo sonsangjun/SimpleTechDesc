@@ -2,8 +2,10 @@
 ## nodejs 서버기동시, 로그남기기
 > URL1 : https://dololak.tistory.com/126 <br>
 > URL2 : https://basketdeveloper.tistory.com/42 <br>
+> URL3 : https://velog.io/@ash/Node.js-%EC%84%9C%EB%B2%84%EC%97%90-logging-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-winston-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0 <br>
 
-winston이란 모듈을 사용한다.
+winston이란 모듈을 사용한다. <br>
+URL3은 Logging설정에 대한 체계적인 정보<br>
 
 ```
 1. 설치
