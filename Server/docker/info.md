@@ -26,8 +26,11 @@
 
 ## docker이미지 생성(nodejs기준)
 > url : https://velog.io/@koozzi/Docker-Node.js%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%98%EA%B3%A0-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EC%8B%A4%ED%96%89%ED%95%B4%EB%B3%B4%EA%B8%B0 <br>
+> DetailDesc : https://javacan.tistory.com/entry/docker-start-7-create-image-using-dockerfile <br>
 
 ```
+
+// 도커이미지 생성에 대한 설명이 DetailDesc 잘 되어있다.
 
 1. server.js (app.listen하는 js파일) 위치의 동일레벨에 파일 두개 생성
    Dockerfile , .dockerignore (대소문자 철저히 구분할 것)
