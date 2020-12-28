@@ -3,10 +3,38 @@
 
 |명칭 | 설명 |
 |---|---|
-|이름|기술해|
+|연동에러 해결|https://m.blog.naver.com/PostView.nhn?blogId=kkj6369&logNo=221407127618&proxyReferer=https:%2F%2Fwww.google.com%2F|
 
 ## nodejs, mysql 연동
 > url : https://poiemaweb.com/nodejs-mysql <br>
+
+```
+// nodejs의 ER_NOT_SUPPORTED_AUTH_MODE 에러 확인
+google에서 검색하니, 이런 사례가 생각보다 많이 발견되었다.
+npm의 보안프로토콜 버전이 mysql8을 못따라와서 생긴문제라고 legecy 처리를 하면 해결된다는 의견이 있다.
+그 중 하나를 링크를 위에 두었다.
+
+...생각해보니, 도커쓰고 있는데, 그러면 도커의 mysql버젼을 낮춰야하나...?
+
+더 찾아보니. SQL문으로 해결할 수 있었다.
+alter user 'genUser'@'%' identified with mysql_native_password by 'genUser';
+
+use mysql;
+select * from user;
+로 확인결과
+
+user테이블의 plugin, authentication_string 컬럼값이 변경되었다.
+
+plugin은 'mysql_native_password'
+authentication_string은 16진수값
+
+이렇게 바뀌어야 nodejs와 연동이 가능한 것으로 추정된다. (해결!)(node server.js 된다)
+mysql_native_password ==>  *4ACFE3202A5FF5CF467898FC58AAB1D615029441
+caching_sha2_password ==>  $A$005$A;>{)YiHA+'UT*HjoPPUiwbP0Iyli7SbweBWEuJlQ7A2M/GVp08yD/Fy66
+
+무슨 암호체계가..?
+
+```
 
 ## docker로 mysql 띄우기
 > url : https://www.hanumoka.net/2018/04/29/docker-20180429-docker-install-mysql/ <br>
