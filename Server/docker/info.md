@@ -104,3 +104,27 @@
    docker stop도 docker run으로 띄운것과 동일하게 docker ps목록에 나타난 CONTAINER ID로 죽일 수 있다.
 
 ```
+
+## 도커 디버깅과 docker commit
+> `도커디버깅`에 관한 내용을 찾던 중. 알게된 사항. <br>
+
+```
+
+원래 도커 내부를 보기위해서 docker exec 명령어를 사용했는데
+아예 뜨지 않는 도커를 탐색하는 방법은 없더라.
+
+그래서, 찾아보던 중, docker commit를 통해 죽을때의 상태로 만들어
+그걸 다시 띄워서 탐색했다.
+
+mysql의 lower적용하다가 죽었는데,
+해당명령어로 발생의 근원을 수정하고 다시 이미지를 떴다.
+
+docker commit [컨테이너ID] [tag]
+(ex. docker commit a3432v autobit:killed)
+
+docker run -it autobit:killed bash
+
+혹은 start후에 exec명령어로 접근하여 내용을 확인하면 된다.
+
+
+```
