@@ -73,6 +73,16 @@
    (ex. revoke all on openDB.* from genUser@'%'; )
    
    * all 대신 select나 기타 다른걸 사용해도 된다.
+   
+   
+7. 정리
+계정생성 : create user [계정ID]@'%' identified by [패스워드]; // 그전에 use mysql로 진입해야함.
+부여권한보기 : show grants for [계정ID]@'%';      // '%'대신 호스트IP 적어도됨.
+권한부여 : grant all privileges on [스키마명].[테이블명] to [계정ID]@'%';
+권한제거 : revoke all on [스키마명].[테이블명] from [계정ID]@'%';
+
+grant의 all privilegest on 대신 ->  select on 이나 update on 으로 변경해도됨.
+revoke도 동일하게 all 대신 select등으로 변경
 
 ```
 
