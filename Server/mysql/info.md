@@ -10,6 +10,7 @@
 
 ```
 // nodejs의 ER_NOT_SUPPORTED_AUTH_MODE 에러 확인
+
 google에서 검색하니, 이런 사례가 생각보다 많이 발견되었다.
 npm의 보안프로토콜 버전이 mysql8을 못따라와서 생긴문제라고 legecy 처리를 하면 해결된다는 의견이 있다.
 그 중 하나를 링크를 위에 두었다.
@@ -32,7 +33,9 @@ authentication_string은 16진수값
 mysql_native_password ==>  *4ACFE3202A5FF5CF467898FC58AAB1D615029441
 caching_sha2_password ==>  $A$005$A;>{)YiHA+'UT*HjoPPUiwbP0Iyli7SbweBWEuJlQ7A2M/GVp08yD/Fy66
 
-무슨 암호체계가..?
+
+mysql_native_password가 뭔가 보안면에서 아쉬운 점으로 인해 최신Mysql버전에서 sha2를 적용했을지도 모르겠는데,
+이건 시간을 두고 node측에서 패치가 이루어지던가 하겠지.
 
 ```
 
