@@ -104,6 +104,10 @@ mysql은 OS마다 대소문자 구분옵션이 다르다.
      가 로그로 찍혀있었다.
      
 4. 적용이 되었...어야하는데, 오류가 나서 일단 보류중.
+   이런경우 도커디버깅이 필요하다.
+   아래링크 참고.
+   
+   https://github.com/sonsangjun/SimpleTechDesc/blob/master/Server/docker/info.md
    
 ```
 
