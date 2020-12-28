@@ -39,6 +39,29 @@ mysql_native_password가 뭔가 보안면에서 아쉬운 점으로 인해 최�
 
 ```
 
+## nodejs, mysql DML문법 기술
+> url : https://www.w3schools.com/nodejs/nodejs_mysql_insert.asp <br>
+
+```
+위의 사이트를 참고하여 작성했긴 했는데,
+Insert쿼리가 미묘하게 달랐다.
+
+(X)  var sql = "INSERT INTO customers (name, address) VALUES ?"; 
+(O)  var sql = "INSERT INTO customers (name, address) VALUES (?);";
+
+'?'에 아래 값이 들어가는데, 그냥 ?만 있으면 syntax에러뜬다. 이거때문에 조금 헤멨다.
+
+들어갈 예시값
+  var values = [
+    ['John', 'Highway 71'],
+    //...
+    ['Chuck', 'Main Road 989'],
+  ];
+  
+connection.query(sql, values, function(err, result) {...} );
+
+```
+
 ## docker로 mysql 띄우기
 > url : https://www.hanumoka.net/2018/04/29/docker-20180429-docker-install-mysql/ <br>
 
