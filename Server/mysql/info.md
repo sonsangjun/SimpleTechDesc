@@ -14,6 +14,11 @@
 ```
 
 1. docker run으로 띄우되, -d옵션을 통해 백그라운드로 띄운다.
+   docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name autobitdb mysql
+   
+   mysql 이미지가 없을경우, 알아서 받는다.
+   
+
 2. docker exec명령어로 mysql컨테이너에 접속 
    docker exec -it mysql_test bash
    
