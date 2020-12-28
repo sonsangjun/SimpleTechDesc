@@ -32,3 +32,22 @@ linux. (centos7기준)
   )
 
 ```
+
+## VM 에 띄운 linux접근.
+> url : https://tristan91.tistory.com/238 <br>
+
+```
+
+// 해당 설정이 끝나면,
+// 위의 staticIP를 공유기에서 보이는 IP로 설정필요.
+
+vmware의 연결방식을 확인하고,
+링크내용을 살펴보니.
+
+bridged 방식으로 접근해야한다.
+
+NAT로 설정하면, 내컴에서 VM linux접근은 가능하지만, 다른 내부PC에서는 접근이 불가능하다.
+NAT가 VM내부 dhcp로 할당한 IP를 공유기 레벨에서 접근할 방법이 없기때문.
+
+
+```
