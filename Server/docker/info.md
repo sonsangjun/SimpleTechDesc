@@ -4,6 +4,7 @@
 > setup(en) : https://www.liquidweb.com/kb/how-to-install-docker-on-centos-7/ <br>
 > (참고만)url : https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html <br>
 > VSCode-Docker연동 : https://89douner.tistory.com/123 <br>
+> (명령어)url : https://brunch.co.kr/@hopeless/10 <br>
 <p/>
 
 ## 간단 명령어
@@ -13,6 +14,8 @@
 |docker version | 도커 현재 버젼확인 client/server <br>만약, server정보가 없으면 docker deamon이 떠 있는지 확인<br>안떠있으면, setup링크를 참고해 띄울 것(systemctl명령어로 등록 및 서비스 시작해야함)|
 |docker run | 도커 실행명령어.(ex. docker run -i -t centos /bin/bash)<br>-option설명<br>`-d : 백그라운드 모드 실행`<br>`-it : 터미널 입력상태로 컨테이너 실행`<br>`--rm 프로세스 종료시 컨테이너 자동으로 삭제`<br>다양한 옵션은 위의 링크 참고.<br> |
 |docker stop | docker ps 으로 조회된 프로세스 중, 살아있는 (STATUS가 Up 1 Minutes 이런것) 걸 죽이는 명령어<br>docker stop ${CONTAINER ID}<br>ex. docker stop ba435cdc3368|
+|docker ps | 동작중인 컨테이너 목록<br>-a 컨테이너 전체목록|
+|docker rm | 컨테이너 삭제<br>(ex. docker rm 3ad434)<br>(ex. docker rm 3ad434, 72d342d)<br>(도커 전체삭제. ex. docker rm 'docker ps -a -q')<br>컨테이너ID전부를 입력할 필요 없다.|
 |docker image | docker로 생성 및 local에 받은 이미지 목록 조회 |
 
 ## VSCode-Docker연동
