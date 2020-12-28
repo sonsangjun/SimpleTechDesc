@@ -12,10 +12,10 @@
    docker exec -it mysql_test bash
    
 3. mysql컨테이너 내에서,
-   mysql -u root -p password
+   mysql -u root -p 
    
    -u : 유저
-   -p : 비밀번호
+   -p : 비밀번호 입력
    
 4. sql날려서 테이블 생성하든 말든 하면 된다.
   (근데, 여기서는 불편하다. 사실상...)
