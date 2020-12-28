@@ -14,6 +14,7 @@ route분리 : https://backback.tistory.com/341 <br>
 > 그 와중에 실수나 몰랐던 사항이 있어 적어둔다. <br>
 
 ```javascript
+//////////////////////////////////////////////////////////
 // aaaSql.js
 
 const logger = require('../conf/winston');
@@ -28,6 +29,19 @@ sqlObj.bbb = function(){...} ;
 // ...
 
 module.exports = sqlObj;
+
+//////////////////////////////////////////////////////////
+// aaa.js
+const aaaSql = require('../sql/aaaSql');
+const express = require('express');
+let router = express.Router();
+
+router.get('/aaa',function(req, res, next){
+  aaaSql.aaa(); // aaaSql.js에서 정의한 Method
+  //...
+});
+
+//...
 
 ```
 > 마지막 줄의 `module.exports = sqlObj;`을 정의하지 않으면 <br>
