@@ -36,6 +36,7 @@
 
 ## mysql DB접근 계정생성
 > url : https://2dubbing.tistory.com/13 <br>
+> url : https://m.blog.naver.com/PostView.nhn?blogId=platinasnow&logNo=220281629640&proxyReferer=https:%2F%2Fwww.google.com%2F <br>
 
 ```
 
@@ -57,6 +58,8 @@
    b. use openDB로 스키마 바라보게 설정
    c. grant all privileges on '스키마명'.'테이블명' to '계정명'@'호스트' identified by '계정비밀번호' with grant option;
      (ex. grant all privileges on openDB.* to genUser@'%' identified by 'genUserPassword' with grant option; )
+     ==> '%'까지만 적고 나머지는 지운다.
+         (ex. grant all privileges on openDB.* to genUser@'%' )
      
      * all 대신 select나 기타 다른걸 사용해도 된다.
      
