@@ -5,6 +5,7 @@
 > (참고만)url : https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html <br>
 > VSCode-Docker연동 : https://89douner.tistory.com/123 <br>
 > (명령어)url : https://brunch.co.kr/@hopeless/10 <br>
+> (명령어,exec)url : http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/08 <br>
 <p/>
 
 ## 간단 명령어
@@ -17,6 +18,7 @@
 |docker ps | 동작중인 컨테이너 목록<br>-a 컨테이너 전체목록|
 |docker rm | 컨테이너 삭제<br>(ex. docker rm 3ad434)<br>(ex. docker rm 3ad434, 72d342d)<br>(도커 전체삭제. ex. docker rm 'docker ps -a -q')<br>컨테이너ID전부를 입력할 필요 없다.|
 |docker image | docker로 생성 및 local에 받은 이미지 목록 조회 |
+|docker exec | 도커로 띄운 컨테이너 안에 명령을 실행하는 것.<br>(docker `옵션` `컨테이너이름/ID` `명령` `매개변수`)  대개 아래예시로 사용.<br>(ex. docker exec -it mysql bash)<br>(ex. docker exec -it a483b3 bash)==>이 경우, 컨테이너ID를 전부입력하지 않아도 된다. |
 
 ## VSCode-Docker연동
 ```
