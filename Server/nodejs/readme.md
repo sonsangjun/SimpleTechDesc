@@ -43,6 +43,8 @@ router.get('/aaa',function(req, res, next){
 
 //...
 
+module.exports = router
+
 ```
 > 마지막 줄의 `module.exports = sqlObj;`을 정의하지 않으면 <br>
 > aaaSql을 require하는 코드는 aaaSql내 정의된 Method를 사용할 수 없다. <br>
