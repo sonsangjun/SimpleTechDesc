@@ -116,6 +116,11 @@ mysql은 OS마다 대소문자 구분옵션이 다르다.
    
 ```
 
+## mysql table생성
+> (데이터형)URL : https://m.blog.naver.com/PostView.nhn?blogId=dudwo567890&logNo=220847437396&proxyReferer=https:%2F%2Fwww.google.com%2F <br>
+
+<p/>
+
 ## docker상의 mysql데이터 백업
 > url : https://mungto.tistory.com/329 <br>
 
