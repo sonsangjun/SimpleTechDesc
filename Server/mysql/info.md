@@ -1,4 +1,10 @@
 # 참고 
+## 자잘한 사항
+
+|명칭 | 설명 |
+|---|---|
+|이름|기술해|
+
 ## nodejs, mysql 연동
 > url : https://poiemaweb.com/nodejs-mysql <br>
 
@@ -60,6 +66,45 @@
    
    * all 대신 select나 기타 다른걸 사용해도 된다.
 
+```
+
+## SQL대소문자 구분
+> url : https://bizadmin.tistory.com/entry/mysql-%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9D%B4%EB%A6%84-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EB%B3%80%EA%B2%BD <br>
+> mysql은 OS에 따라 기본설치시 대소문자 구분Flag를 다르게 주고 있다. <br>
+
+```
+
+mysql은 OS마다 대소문자 구분옵션이 다르다. 
+대소문자 구분없이 진행하려면 `select @@lower_case_table_names`로 조회되는 값을 1로 변경해야한다.
+
+변경방법
+1. 우리는 docker를 사용하므로, docker exec명령어를 통해 컨테이너 내부로 들어간다.
+  (컨테이너 내부에 vim 안깔려 있으면, 설치하면 된다.)
+  (mainOs는 centos인데, docker-mysql은 데비안 계열이라 apt-get명령어로 설치함.)
+  (apt-get update -> apt-get install vim)
+  
+2. cd /etc/mysql/
+   vim my.cnf
+   
+   [mysqlId] 하위에 
+   
+   lower_case_table_names = 1 추가(있으면 변경)
+   
+3. docker-mysql컨테이너 재시작
+   docker stop -> docker start 
+   
+   (당연히, 컨테이너ID를 뒤에 적어야 한다.)
+   
+   * start후, 컨테이너가 바로 종료된다면, docker logs로 문제점을 파악한다.
+     필자의 경우는 
+     
+     "Different lower_case_table_names settings for server('1') and data dictionary('0')"
+     ==> stackoverflow를 찾아보니, 변경후 비슷한 문제를 겪는게 보여서 일단 변경은 보류.
+     
+     가 로그로 찍혀있었다.
+     
+4. 적용이 되었...어야하는데, 오류가 나서 일단 보류중.
+   
 ```
 
 ## docker상의 mysql데이터 백업
