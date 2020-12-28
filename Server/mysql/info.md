@@ -61,3 +61,11 @@
    * all 대신 select나 기타 다른걸 사용해도 된다.
 
 ```
+
+## docker상의 mysql데이터 백업
+> url : https://mungto.tistory.com/329 <br>
+
+```
+컨테이너를 띄워놓은 상태이므로,
+당연히 컨테이너 내 데이터를 백업해야한다.
+```
