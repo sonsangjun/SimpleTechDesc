@@ -22,4 +22,8 @@ URL3은 Logging설정에 대한 체계적인 정보<br>
   winston.js에 logger를 정의하고,
   다른 routes같은 js에서 require를 통해 import하여 사용하면 된다.
 
+* 적용시, syntax에러가 발생하면, 오류지점의 개행된 코드를 일자로 정렬한다.
+  (nodejs로 동작시, 코드 해석하는 방식이 브라우저와 살짝 다른것 같다.)
+  
+  
 ```
