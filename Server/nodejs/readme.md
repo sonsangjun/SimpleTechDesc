@@ -8,6 +8,16 @@ express설치 : https://junspapa-itdev.tistory.com/7 <br>
 route분리 : https://backback.tistory.com/341 <br>
 (controller, service 처럼 분리느낌이라 생각했는데, 내가 아는 spring controller와는 조금 다른 느낌) <br>
 
+## package.json
+> url : https://hyunjun19.github.io/2018/03/23/package-lock-why-need/ <br>
+
+```
+당연히, package.json만 커밋하고 node_modules나 package-lock.json은 무시처리했는데,
+
+node_modules를 npm install로 다시 설치하는 환경이라면 
+package-lock.json이 필요하네.
+
+```
 
 ## module 구성
 > 코드가 길어지고, 여러기능이 혼재하면 하나 둘 분리하기 마련이다. <br>
