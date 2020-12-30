@@ -16,15 +16,18 @@ IDE내에서 stg/dev/real 바꿀 수 있으면 좋은데...
 
 여튼,
 
-window : 
-set NODE_ENV = 'production'
-set NODE_ENV = 'development'
+개발 : 
+window [set  NODE_ENV=development ]
+linux  [$NODE_ENV=development]
 
-linux : 
-export NODE_ENV = 'production'
-export NODE_ENV = 'development'
+운영
+window [set  NODE_ENV=production ]
+linux  [$NODE_ENV=production]
 
-아니면, $NODE_ENV = 'production' node server.js
+아니면, $NODE_ENV='production' node server.js
 이렇게도 사용할 수 있다.
+
+*주의
+Windows '='사이 공백이나 '"' 까지도 값으로 포함하므로 주의
 
 ```
