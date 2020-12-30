@@ -35,7 +35,14 @@ Gmail을 통한 메일전송방법이 암호를 평문으로 넣는 예제만 �
 4. Step1, Step2를 따라가며 Authorization Code / Refresh token / Access token을 차례대로 발급받아 저장
 5. nodejs에 가서 미입력항목 입력하기. (access token이 한시간마다 만료되는데, 정말 인증갱신이 되는지 모르겠다.)
    (https://blog.eunsatio.io/develop/nodemailer%EC%99%80-gmail%EB%A1%9C-%EB%A9%94%EC%9D%BC-%EB%B0%9C%EC%86%A1%ED%95%98%EA%B8%B0-%E3%85%A1-OAuth2)
-
-
+   
+5.1. unauthorized_client nodemailer gmail
+   인증코드가 폐기되는건지, 저렇게 뜨는 경우가 있다.
+   
+   제일 좋은 방법은 authPage에 들어가지 않고, 새로 발급받는게 좋은데,
+   nodemailer내 OAuth2 를 믿어봐야겠다.
+   
+   authCode는 다시 발급받아 테스트를 진행하니, (https://developers.google.com/oauthplayground/ 여기가서 다시발급받음)
+   타이틀과 같은 오류는 발생하지 않았다.
 
 ```
