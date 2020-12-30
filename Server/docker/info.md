@@ -77,8 +77,9 @@
    linux기준.
    
    docker build --tag [docker hub ID]/[Image Name]:[tag_name]
-   docker build --tag auto/bitcoin:1.0
+   docker build --tag auto/bitcoin:1.0 .
    
+   마지막 '.'은 현재경로를 의미한다.
    버젼이 변경시, autobit:1.1 이런식으로 다시 빌드한다.
    (docker images로 체크하니 용량이 그대로 복사되던데 이건 체크 필요)
 
