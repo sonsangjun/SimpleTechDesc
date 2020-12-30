@@ -1,6 +1,6 @@
 ## 개발/운영 환경분리
 > url : https://devhyun.com/blog/post/23 <br>
-
+> url : https://qastack.kr/programming/11104028/process-env-node-env-is-undefined <br>
 ```
 
 NODE_ENV값에 의해 개발/운영 환경이 결정된다.
@@ -18,14 +18,13 @@ IDE내에서 stg/dev/real 바꿀 수 있으면 좋은데...
 
 개발 : 
 window [set  NODE_ENV=development ]
-linux  [$NODE_ENV=development]
+linux  [export NODE_ENV=development] OR
+       [NODE_ENV=development node server.js]
 
 운영
 window [set  NODE_ENV=production ]
-linux  [$NODE_ENV=production]
-
-아니면, $NODE_ENV='production' node server.js
-이렇게도 사용할 수 있다.
+linux  [export NODE_ENV=production]
+       [NODE_ENV=production node server.js]
 
 *주의
 Windows '='사이 공백이나 '"' 까지도 값으로 포함하므로 주의
