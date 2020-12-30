@@ -23,5 +23,19 @@ Gmail을 통한 메일전송방법이 암호를 평문으로 넣는 예제만 �
    자바스크립트는 등록할 필요없다.
    
 3. 클라ID, 클라비번이 생성된다.
+   
+   접속 : https://developers.google.com/oauthplayground/ 
+   톱니바퀴를 클릭하여,
+   
+   하단 Use your own OAuth credentials 체크
+   후,
+   
+   클라ID / 클라Secret 입력
+   
+4. Step1, Step2를 따라가며 Authorization Code / Refresh token / Access token을 차례대로 발급받아 저장
+5. nodejs에 가서 미입력항목 입력하기. (access token이 한시간마다 만료되는데, 정말 인증갱신이 되는지 모르겠다.)
+   (https://blog.eunsatio.io/develop/nodemailer%EC%99%80-gmail%EB%A1%9C-%EB%A9%94%EC%9D%BC-%EB%B0%9C%EC%86%A1%ED%95%98%EA%B8%B0-%E3%85%A1-OAuth2)
+
+
 
 ```
