@@ -110,6 +110,23 @@
 
 ```
 
+## docker run, create, start 
+> url : https://blog.voidmainvoid.net/112 <br>
+
+```
+일단, run 과 start 차이
+run -> 이미지로부터 새로운 컨테이너 만들고 실행 (docker ps -a로 보면 있음)
+start -> 기존 있는 컨테이너를 실행함. (docker start 1cf 이런식)
+
+이걸로 생각해보면,
+run ~= create, start를 합친것과 비슷한 개념인것 같다.
+
+당연히 이미지는 docker build해서 생성하고,
+
+```
+
+<p/>
+
 ## 도커 디버깅과 docker commit
 > `도커디버깅`에 관한 내용을 찾던 중. 알게된 사항. <br>
 
