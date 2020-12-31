@@ -8,7 +8,7 @@
 > (명령어,exec)url : http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter20/08 <br>
 > (도커컴포즈)url : https://www.44bits.io/ko/post/almost-perfect-development-environment-with-docker-and-docker-compose#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EB%B3%B4%EC%A1%B4%ED%95%98%EA%B8%B0 <br>
 > (도커디버깅)url : https://www.44bits.io/ko/post/docker-container-trouble-shooting-by-exec-and-commit <br>
-
+> (Dockerfile)url : https://novemberde.github.io/2017/04/02/Docker_7.html <br>
 <p/>
 
 ## 간단 명령어
@@ -60,6 +60,8 @@
 
       RUN npm install
       COPY . .
+      
+      ENV NODE_ENV development #환경변수(운영/개발을 구분한다)
 
       EXPOSE 3000
       CMD [ "node", "server.js" ]
