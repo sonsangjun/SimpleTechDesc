@@ -150,3 +150,38 @@ docker run -it autobit:killed bash
 
 
 ```
+
+<p/>
+
+## 도커 공유디렉토리 설정
+> url : https://tttsss77.tistory.com/161 <br>
+
+```
+개발환경에서야 도커 컨테이너를 자꾸 지워도 상관없지만,
+운영일때는 말이 좀 달라진다.
+
+로그를 함부로 없애면 안되니,
+timezone설정하듯이 공유디렉토리 설정이 필요하다.
+
+docker create 시 -v 옵션을 주면 가능한데,
+복수 디렉토리 설정이 가능하다.
+
+아래는 예시,
+
+docker create --name autobit -p 18001:18001 \
+ -v /log/nodejs/:/log/nodejs/ \
+ -v /etc/localtime:/etc/localtime:ro \
+-e TZ=Asia/Seoul \
+auto/autobit:$timestamp 
+
+
+명령어 사이에 있는
+ -v /log/nodejs/:/log/nodejs/ \
+ -v /etc/localtime:/etc/localtime:ro \
+ 
+ 처럼 여러 디렉토리를 설정할 수 있다.
+ 
+ 
+* '\' 을 사용하면 개행해도 명령어 처리가 가능하다.
+
+```
