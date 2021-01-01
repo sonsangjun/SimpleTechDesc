@@ -56,3 +56,21 @@ timestamp=`date +%Y%m%d%H%M`
 
 
 ```
+
+<p/>
+
+> url : https://www.clien.net/service/board/lecture/13017510 <br>
+> url : https://m.blog.naver.com/PostView.nhn?blogId=star_breeze&logNo=220534943357&proxyReferer=https:%2F%2Fwww.google.com%2F <br>
+```
+유닉스 타임 : 1446994800
+가끔, mysql을 뒤져보니 10자리가 아니라 13자리로 되어있는 숫자가 있는데
+이거는 밀리초를 포함한 타임스탬프이다.
+
+select FROM_UNIXTIME(타임스탬프값) FROM DUAL;
+
+1446994800      -- 2015-11-08 15:00:00
+1609492404222   -- 2021-01-01 09:13:24.2220	2015-11-08 15:00:00
+
+처럼 나온다. 
+
+```
