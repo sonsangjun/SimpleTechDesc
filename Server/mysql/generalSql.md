@@ -35,3 +35,20 @@ CREATE TABLE SB_HISTORY NOT EXISTS BITCOIN (
   );
   
 ```
+
+## mysql 스키마의 테이블사이즈 조회
+> url : https://www.lesstif.com/dbms/mysql-17105786.html <br>
+
+```sql
+--찾아본 사이트 중에,
+--가장 간결하고 오류가 없는 쿼리라서 추가한다.
+
+
+SELECT TABLE_NAME AS "Tables",
+                     round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
+FROM information_schema.TABLES
+WHERE table_schema = "bitcoin"
+ORDER BY (data_length + index_length) DESC;
+
+
+```
