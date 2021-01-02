@@ -3,7 +3,7 @@
 
 <p/>
 
-## nodejs의 API호출시
+## 클라에서 nodejs서버에 정의한 API호출시
 > HttpMethod에 GET/POST/PATCH/PUT/DELETE 등이 있지만. <br>
 > GET/POST만 일단설명<br>
 
