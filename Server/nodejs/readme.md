@@ -59,3 +59,18 @@ module.exports = router
 > 마지막 줄의 `module.exports = sqlObj;`을 정의하지 않으면 <br>
 > aaaSql을 require하는 코드는 aaaSql내 정의된 Method를 사용할 수 없다. <br>
 > 생각보다 잘 까먹는 점이므로 꼭 상기하기.<br>
+
+## nodejs 서버 보안
+> url : https://m.blog.naver.com/PostView.nhn?blogId=cck223&logNo=221019399455&proxyReferer=https:%2F%2Fwww.google.com%2F <br>
+> url(ssl) : https://blog.naver.com/cck223/220959771753 <br>
+
+```
+향후, 프론트앤드도 붙이면서
+외부에서 보려고 페이지를 노출시키려는 경우, 
+
+미리고려해봐야할 사항이다.
+누가 하꼬페이지를 공격하겠냐만은 서버로그보면 24시간 내내 서버 비밀번호가
+틀렸다는 메시지가 뜨는걸로 봐서는...
+
+
+```
