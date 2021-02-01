@@ -1,6 +1,7 @@
 # 참고 
 > url(Ngnix) : https://myjamong.tistory.com/9 <br/>
 > url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
+> url(nodejsSSO) : https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=221175584994&proxyReferer=https:%2F%2Fwww.google.com%2F <br/>
 > url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
 
 ## ngnix(Web)와 nodejs(Was) 연동
