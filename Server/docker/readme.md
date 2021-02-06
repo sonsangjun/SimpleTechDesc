@@ -185,3 +185,31 @@ auto/autobit:$timestamp
 * '\' 을 사용하면 개행해도 명령어 처리가 가능하다.
 
 ```
+
+## 도커환경변수 사용
+> url : https://falsy.me/dotenv%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-nodejs-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95%EA%B3%BC-webpack-%EB%B2%88%EB%93%A4%EB%A1%9C-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EC%A0%84/ <br/>
+
+```
+npm에 있는 dotenv를 사용한다.
+
+# 프로젝트 꼭 필요하므로 --save를 붙여주면 좋다.
+npm install dotenv
+
+# 그러면 프로젝트 최상위에 .env가 생긴다.
+# 그 파일에 key=value 형태로 정의를 하고,
+# 실제, 
+
+# .env
+isCloud=false
+
+# server.js
+const dotenv = require('dotenv');
+dotdev.config();
+
+console.log(process.env.isCloud);
+
+####################
+여러환경을 사용시. 최상위 .env는 .gitignore에 등록하고,
+환경에 맞는 sh명령어 파일을 만들어 cp하는식으로 환경별 처리하는 방법도 괜찮은 듯하다.
+
+```
