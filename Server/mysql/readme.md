@@ -74,7 +74,7 @@ connection.query(sql, values, function(err, result) {...} );
    * 외부에 데이터를 저장해야하는 경우. ( mysql이 저장하는 경로는 /var/lib/mysql 하위에 있다.)
      docker내 경로와 실제 물리경로를 마운트해야한다.
      
-     예) docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name bitcoindb -v /home/commuser/mysqldata:/var/lib/mysql mysql:8:0:22
+     예) docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name bitcoindb -v /home/commuser/mysqldata:/var/lib/mysql mysql:8.0.22
    
    mysql 이미지가 없을경우, 알아서 받는다.
    하지만, 미리 버전을 결정하고( docker pull mysql:8.0.22 ) 진행하는게 좋다.
