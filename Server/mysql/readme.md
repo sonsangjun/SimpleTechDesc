@@ -4,7 +4,7 @@
 |명칭 | 설명 |
 |---|---|
 |연동에러 해결|https://m.blog.naver.com/PostView.nhn?blogId=kkj6369&logNo=221407127618&proxyReferer=https:%2F%2Fwww.google.com%2F|
-
+|버전체크 | SELECT VERSION(); `/* OR */` <br/>SHOW VARIABLES LIKE 'version'; |
 ## nodejs, mysql 연동
 > url : https://poiemaweb.com/nodejs-mysql <br>
 
