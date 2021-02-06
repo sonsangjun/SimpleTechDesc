@@ -52,6 +52,7 @@ ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 timestamp=`date +%Y%m%d%H%M`
 
 # build and Timezon Linking
+# -v host물리경로:컨테이너경로
 docker build --tag auto/ee:$timestamp .
 docker create --name autodev -p 18001:18001 -v /etc/localtime:/etc/localtime:ro \
 -e TZ=Asia/Seoul \
