@@ -76,10 +76,8 @@ connection.query(sql, values, function(err, result) {...} );
      
      예) docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name bitcoindb -v /home/commuser/mysqldata:/var/lib/mysql mysql:8:0:22
    
-   
-   
    mysql 이미지가 없을경우, 알아서 받는다.
-   
+   하지만, 미리 버전을 결정하고( docker pull mysql:8.0.22 ) 진행하는게 좋다.
 
 2. docker exec명령어로 mysql컨테이너에 접속 
    docker exec -it mysql_test bash
