@@ -35,4 +35,10 @@
    (웹서버도 개발/운영 나눠야하면 5갠데... 허어.)
    
 ```
+> url : https://azuremarketplace.microsoft.com/ko-kr/marketplace/apps/cognosys.docker-ce-with-centos-7-7?tab=Overview <br/>
 
+```
+
+구독하란 의미다.
+
+```
