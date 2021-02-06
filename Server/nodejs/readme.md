@@ -74,3 +74,13 @@ module.exports = router
 
 
 ```
+
+## nodejs 스케쥴링.
+
+> url : https://velog.io/@filoscoder/%EC%8A%A4%EC%BC%80%EC%A4%84-%EC%97%85%EB%AC%B4-%EC%9E%90%EB%8F%99%ED%99%94-Node-cron-vs-Node-schedule-%EB%B9%84%EA%B5%90-clk4dyynve <br/>
+
+```
+nodejs의 반복작업을 settimeout으로 돌리고 있는데, 좀 더 안정적으로 돌려야해서, 라이브러리를 사용하기로 함.
+(가끔 새벽에 반복작업이 멈춰버리는 경우가 있어, 심히 곤란.)
+
+```
