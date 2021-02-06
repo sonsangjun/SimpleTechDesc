@@ -64,11 +64,19 @@ connection.query(sql, values, function(err, result) {...} );
 
 ## docker로 mysql 띄우기
 > url : https://www.hanumoka.net/2018/04/29/docker-20180429-docker-install-mysql/ <br>
+> url : http://jmlim.github.io/docker/2019/07/30/docker-mysql-setup/ <br/>
 
-```
+```bash
 
 1. docker run으로 띄우되, -d옵션을 통해 백그라운드로 띄운다.
    docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name autobitdb mysql
+   
+   * 외부에 데이터를 저장해야하는 경우. ( mysql이 저장하는 경로는 /var/lib/mysql 하위에 있다.)
+     docker내 경로와 실제 물리경로를 마운트해야한다.
+     
+     예) docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name bitcoindb -v /home/commuser/mysqldata:/var/lib/mysql mysql:8:0:22
+   
+   
    
    mysql 이미지가 없을경우, 알아서 받는다.
    
