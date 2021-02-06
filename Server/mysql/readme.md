@@ -243,4 +243,14 @@ mysql은 OS마다 대소문자 구분옵션이 다르다.
 ```
 컨테이너를 띄워놓은 상태이므로,
 당연히 컨테이너 내 데이터를 백업해야한다.
+
+docker만 제외하면, 백업/복원명령어는 동일하다.
+
+# 백업
+# -p"패스워드", -p와 "패스워드"사이에 공백이 있으면 안된다.
+# 모든DB가 아니라면, --database db1 db2 db3 ... 이런식으로 나열하면 된다.
+ex. exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > ~/backup/data.sql
+
+# 복원
+ex. exec mysql -u root -p"$MYSQL_ROOT_PASSWORD"' < ~/backup/data.sql
 ```
