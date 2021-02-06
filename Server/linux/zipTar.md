@@ -24,5 +24,6 @@ tar -c [option] [name] // 압축시
 tar -x [option] [name] // 압축해제시
 
 ex. tar -xvzf 2020-01.tar.gz // x(해제), v(작업내용출력), z(gzip형식압축/압축해제) f(사용할 파일의 tar지정)
+ex. tar cvf nodelog.tar ./*   
 
 ```
