@@ -3,7 +3,7 @@
 
 |명칭|설명|
 |----|----|
-|yum패키지삭제|https://zetawiki.com/wiki/CentOS_yum_%ED%8C%A8%ED%82%A4%EC%A7%80_%EC%82%AD%EC%A0%9C|
+|yum패키지삭제|https://zetawiki.com/wiki/CentOS_yum_%ED%8C%A8%ED%82%A4%EC%A7%80_%EC%82%AD%EC%A0%9C<br/>yum remove|
 
 ## 해상도변경
 > url : https://hihighlinux.tistory.com/7 <br>
