@@ -1,3 +1,17 @@
+## nodejs 설치
+
+```
+# 설치전 먼저 진행.
+yum update
+yum install epel-release
+
+# 완료후 nodejs 설치 진행.
+yum install nodejs
+
+```
+
+<br/>
+
 ## 개발/운영 환경분리
 > url : https://devhyun.com/blog/post/23 <br>
 > url : https://qastack.kr/programming/11104028/process-env-node-env-is-undefined <br>
