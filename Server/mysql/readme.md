@@ -65,8 +65,20 @@ connection.query(sql, values, function(err, result) {...} );
 ## docker로 mysql 띄우기
 > url : https://www.hanumoka.net/2018/04/29/docker-20180429-docker-install-mysql/ <br>
 > url : http://jmlim.github.io/docker/2019/07/30/docker-mysql-setup/ <br/>
+> url(오류) : https://www.google.com/search?sxsrf=ALeKk02yMkswTn7zTmYEQYuonOGZCT4ibQ%3A1612598760968&ei=6E0eYJTJOsLX-QaKvZvwBg&q=docker+mysql+exited+139&oq=docker+mysql+exited+139&gs_lcp=CgZwc3ktYWIQAzIECCMQJzoHCCMQsAMQJ1DINFjoNWCnOGgCcAB4AIABiQGIAdACkgEDMS4ymAEAoAEBqgEHZ3dzLXdpesgBAcABAQ&sclient=psy-ab&ved=0ahUKEwiU3b_C5tTuAhXCa94KHYreBm4Q4dUDCA0&uact=5 <br/>
 
 ```bash
+
+!참고.
+ 추측이지만, 마소 가상머신에서 docker mysql를 실행시 Exited (139) 오류가 발생한다.
+ 128 + 11, 메모리 위반이라는데,
+ 
+ 가상머신 자체도 podman이 에뮬레이팅 하는걸로 보아, 
+ 이미 podman을 통해 띄워져 있는 모종의 컨테이너로 인해
+ 오류가 발생하는걸로 생각된다. (맛소가 제공하는 mysql 컨테이너를 쓰란말이지! 이런건가?)
+ 
+ 마소 클라우드에서 docker 구동시 참고할 것. (mysql을 한번직접 깔아봐야겠다.)
+ 
 
 1. docker run으로 띄우되, -d옵션을 통해 백그라운드로 띄운다.
    docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name autobitdb mysql
