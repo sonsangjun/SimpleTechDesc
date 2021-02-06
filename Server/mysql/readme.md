@@ -6,6 +6,7 @@
 |연동에러 해결|https://m.blog.naver.com/PostView.nhn?blogId=kkj6369&logNo=221407127618&proxyReferer=https:%2F%2Fwww.google.com%2F|
 |버전체크 | SELECT VERSION(); `/* OR */` <br/>SHOW VARIABLES LIKE 'version'; |
 |mysql설치 | https://info-lab.tistory.com/172 |
+|계정변경 | https://blog.itpaper.co.kr/mysql-password/ <br/>비밀번호변경 : alter user 'root'@'localhost' identified with mysql_native_password by '123qwe!@#'; |
 
 ## nodejs, mysql 연동
 > url : https://poiemaweb.com/nodejs-mysql <br>
