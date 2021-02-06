@@ -5,6 +5,8 @@
 |---|---|
 |연동에러 해결|https://m.blog.naver.com/PostView.nhn?blogId=kkj6369&logNo=221407127618&proxyReferer=https:%2F%2Fwww.google.com%2F|
 |버전체크 | SELECT VERSION(); `/* OR */` <br/>SHOW VARIABLES LIKE 'version'; |
+|mysql설치 | https://info-lab.tistory.com/172 |
+
 ## nodejs, mysql 연동
 > url : https://poiemaweb.com/nodejs-mysql <br>
 
@@ -67,6 +69,8 @@ connection.query(sql, values, function(err, result) {...} );
 > url : http://jmlim.github.io/docker/2019/07/30/docker-mysql-setup/ <br/>
 > url(오류) : https://www.google.com/search?sxsrf=ALeKk02yMkswTn7zTmYEQYuonOGZCT4ibQ%3A1612598760968&ei=6E0eYJTJOsLX-QaKvZvwBg&q=docker+mysql+exited+139&oq=docker+mysql+exited+139&gs_lcp=CgZwc3ktYWIQAzIECCMQJzoHCCMQsAMQJ1DINFjoNWCnOGgCcAB4AIABiQGIAdACkgEDMS4ymAEAoAEBqgEHZ3dzLXdpesgBAcABAQ&sclient=psy-ab&ved=0ahUKEwiU3b_C5tTuAhXCa94KHYreBm4Q4dUDCA0&uact=5 <br/>
 
+> url(직접설치) : https://info-lab.tistory.com/172 <br/>
+
 ```bash
 
 !참고.
@@ -78,7 +82,6 @@ connection.query(sql, values, function(err, result) {...} );
  오류가 발생하는걸로 생각된다. (맛소가 제공하는 mysql 컨테이너를 쓰란말이지! 이런건가?)
  
  마소 클라우드에서 docker 구동시 참고할 것. (mysql을 한번직접 깔아봐야겠다.)
- 
 
 1. docker run으로 띄우되, -d옵션을 통해 백그라운드로 띄운다.
    docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name autobitdb mysql
@@ -105,6 +108,29 @@ connection.query(sql, values, function(err, result) {...} );
   
   * mySql workbench를 사용하면 된다. 링크 참조.
 ```
+<br/>
+
+> 직접설치 <br/>
+> (도커로 되면 좋은데... 안되면 뭐 쩝..) <br/>
+```
+
+# 설치진행
+#--> mysql8 기준 약 180MB넘는다.
+yum install mysql-server 
+
+# mysql시작
+systemctl start mysqld.service
+
+# 상태확인 (active인지)
+systemctl status mysqld
+
+# 서버재기동시 동작하도록 설정
+systemctl enable mysqld
+
+```
+
+<br/>
+
 
 ## mysql DB접근 계정생성
 > url : https://2dubbing.tistory.com/13 <br>
