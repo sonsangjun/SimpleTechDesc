@@ -69,8 +69,6 @@ connection.query(sql, values, function(err, result) {...} );
 > url : http://jmlim.github.io/docker/2019/07/30/docker-mysql-setup/ <br/>
 > url(오류) : https://www.google.com/search?sxsrf=ALeKk02yMkswTn7zTmYEQYuonOGZCT4ibQ%3A1612598760968&ei=6E0eYJTJOsLX-QaKvZvwBg&q=docker+mysql+exited+139&oq=docker+mysql+exited+139&gs_lcp=CgZwc3ktYWIQAzIECCMQJzoHCCMQsAMQJ1DINFjoNWCnOGgCcAB4AIABiQGIAdACkgEDMS4ymAEAoAEBqgEHZ3dzLXdpesgBAcABAQ&sclient=psy-ab&ved=0ahUKEwiU3b_C5tTuAhXCa94KHYreBm4Q4dUDCA0&uact=5 <br/>
 
-> url(직접설치) : https://info-lab.tistory.com/172 <br/>
-
 ```bash
 
 !참고.
@@ -112,6 +110,9 @@ connection.query(sql, values, function(err, result) {...} );
 
 > 직접설치 <br/>
 > (도커로 되면 좋은데... 안되면 뭐 쩝..) <br/>
+> url : https://absorbed.tistory.com/entry/mysqlsecureinstallation%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A5%BC-%EC%95%8C%EA%B3%A0-%EA%B3%84%EC%8B%9C%EB%82%98%EC%9A%94 <br/>
+> url(직접설치) : https://info-lab.tistory.com/172 <br/>
+
 ```
 
 # 설치진행
@@ -126,6 +127,10 @@ systemctl status mysqld
 
 # 서버재기동시 동작하도록 설정
 systemctl enable mysqld
+
+# mysql 보안설정
+# 
+mysql_secure_installation
 
 ```
 
