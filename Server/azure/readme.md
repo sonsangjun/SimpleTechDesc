@@ -38,8 +38,9 @@
 > url : https://azuremarketplace.microsoft.com/ko-kr/marketplace/apps/cognosys.docker-ce-with-centos-7-7?tab=Overview <br/>
 > url : https://portal.azure.com/?fromAccountsPortal=true#create/cognosys.docker-ce-with-centos-8-1docker-ce-with-centos-8-1 <br/>
 ```
-
+↑
 구독하란 의미다.
 애초에 도커를 전용으로 사용할 수 있는 구독이 있었네...아 젠장.
 
+공짜 도커도 있으니까, 찾아서 서버비용만 잘 지불하고 쓰면된다.
 ```
