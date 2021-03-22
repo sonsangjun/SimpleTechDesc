@@ -3,6 +3,7 @@
 > 참고 <br/>
 > https://gaemi606.tistory.com/187 <br/>
 > https://miaow-miaow.tistory.com/148 <br/>
+> http://labs.brandi.co.kr/2019/01/30/kwakjs.html <br/>
 
 ```
 1. 접속 https://api.slack.com/apps 
@@ -51,8 +52,34 @@
    
    e. OAuth Tokens for Your Team 한 토큰이 발행되었다.
    
-5. 
-      
+5. Slack에 App추가
+   a.0. Url로 직접들어가려면, https://app.slack.com/client/블라블라...
+        모르겠으면.
+   
+   a.1. https://slack.com/intl/ko-kr/
+        로 들어가서 로그인 하시고.
+   
+        우측상단에 SLACK실행 클릭해서 당신의 Workspace를 들어가면 된다.
+        (아까 앱만들때 선택한 워크스페이스를 선택하면 된다.)
+        
+   b.   왼쪽 하단에 '+앱 추가' 버튼을 클릭한다.
+        
+   c.   아까 만든 앱 이름을 검색한다.
+        딱, 한개 뜰것이다.
+        
+        누르면, 워크스페이스에 추가된다.
+   
+6. Nodejs의 Slack모듈설치
+   궁극적인 목표는 Nodejs서버에서 메시지를 보내는 것이다.
+   
+   Nodejs로 구성된 프로젝트 폴더로 이동하여 (package.json이 있는 폴더)
+   아래 명령어를 실행한다.
+   
+   npm install slack-node --save
+   
+7. JS코드에서 테스팅.
+   
+8.  
 
 
 ```
