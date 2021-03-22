@@ -118,9 +118,7 @@
      });
      
      console.log(`Successfully send message ${result.ts} in conversation ${conversationId}`);
-```
 
-```json
 8. 호출시, slack에 'Hello world'가 찍히면 성공이다.
 
    덤으로 성공시 json결과
