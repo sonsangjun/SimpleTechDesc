@@ -88,7 +88,7 @@
    Nodejs로 구성된 프로젝트 폴더로 이동하여 (package.json이 있는 폴더)
    아래 명령어를 실행한다.
    
-   npm install @slack/web-api
+   npm install @slack/web-api --save
    
 7. JS코드에서 테스팅.
    테스트코드 작성은 어렵지 않다.
