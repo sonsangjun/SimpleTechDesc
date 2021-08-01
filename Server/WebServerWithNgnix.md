@@ -127,8 +127,8 @@ FROM nginx
 # nginx.conf  : http 설정
 # server.conf : server 설정
 # 일단 띄우는게 목적이라면, 아래 두 COPY는 주석처리하고 진행.
-COPY nginx_conf/nginx_http_dev.conf   /etc/nginx/nginx.conf
-COPY nginx_conf/nginx_server_dev.conf /etc/nginx/conf.d/default.conf
+COPY nginx_conf/nginx_http_real.conf   /etc/nginx/nginx.conf
+COPY nginx_conf/nginx_server_real.conf /etc/nginx/conf.d/default.conf
 
 ENV NODE_ENV production
 
