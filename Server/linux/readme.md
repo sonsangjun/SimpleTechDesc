@@ -1,9 +1,17 @@
 # 정보
 ## 자잘한 정보
 
+> CentOS
+
 |명칭|설명|
 |----|----|
 |yum패키지삭제|https://zetawiki.com/wiki/CentOS_yum_%ED%8C%A8%ED%82%A4%EC%A7%80_%EC%82%AD%EC%A0%9C<br/>yum remove|
+
+> Ubuntu
+
+|명칭|설명|
+|---|---|
+|net-tool 설치 | https://linuxconfig.org/how-to-install-missing-ifconfig-command-on-debian-linux <br/>가끔 ifconfig실행시, 없다는 문구가 보이면, 이건 설치해야한다. 간단히 기술하면, <br/><br/> 1.apt-get update (이미 업데이트 상태라면 Skip) <br/> 2.apt-get install net-tools  |
 
 ## 해상도변경
 > url : https://hihighlinux.tistory.com/7 <br>
