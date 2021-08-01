@@ -171,4 +171,6 @@ CONTAINER ID   IMAGE                                      COMMAND               
 9647908b190e   auto/webserver_real:202108010659           "/docker-entrypoint.…"   23 seconds ago   Up 4 seconds       0.0.0.0:80->80/tcp        webserver_real
 3af7e1a2572e   auto/autobit_fu_moni_real:202105311347     "docker-entrypoint.s…"   2 months ago     Up 2 days          0.0.0.0:9999->9999/tcp    autobit_fu_moni_real
 ```
-
+<br/>
+> 여기까지가 일단 도커를 통해 nginx를 설정하는 방법이다. <br/>
+> 어떤URL로 들어오면 어디 컨테이너로 던져줄지를 설정해야하는데, 이는 관련 Git프로젝트에서 다룬다. <br/>
