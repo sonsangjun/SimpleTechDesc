@@ -159,6 +159,7 @@ docker run -it autobit:killed bash
 
 ## 도커 공유디렉토리 설정
 > url : https://tttsss77.tistory.com/161 <br>
+> url : https://darkrasid.github.io/docker/container/volume/2017/05/10/docker-volumes.html <br/>
 
 ```
 개발환경에서야 도커 컨테이너를 자꾸 지워도 상관없지만,
@@ -187,6 +188,8 @@ auto/autobit:$timestamp
  
  
 * '\' 을 사용하면 개행해도 명령어 처리가 가능하다.
+* `\` 을 사용할 시, 그 사이에 `#(주석)`을 넣으면 명령어의 끝으로 간주하여, 다음 연결될 부위는 독립적인 명령어로 동작한다.
+  (간단히 말해서, 쉘 실행시 오류가 발생한다.)
 
 ```
 
