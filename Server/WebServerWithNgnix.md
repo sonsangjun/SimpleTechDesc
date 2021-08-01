@@ -1,9 +1,6 @@
 # 참고 
 > url(Ngnix) : https://myjamong.tistory.com/9 <br/>
 > url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
-> url(dockerNgnix) : https://frontmulti.tistory.com/69 <br/>
-> url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
-> url(nginxSetting) : https://velog.io/@jakeseo_me/Node%EC%97%90%EC%84%9C-NGINX%EB%A5%BC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%ED%94%84%EB%A1%9D%EC%8B%9C%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EB%B2%88%EC%97%AD <br/>
 ```
 nginx관련 내용이 담긴 페이지URL.
 
@@ -90,8 +87,22 @@ location /{블라블라} {
 
 ```
 
+## nginx 세부세팅
+### 참고URL
+> https://extrememanual.net/9976 <br/>
+> url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
+> url(nginxSetting) : https://velog.io/@jakeseo_me/Node%EC%97%90%EC%84%9C-NGINX%EB%A5%BC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%ED%94%84%EB%A1%9D%EC%8B%9C%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EB%B2%88%EC%97%AD <br/>
+
+### 내용
+```
+
+```
 
 ## docker N Nginx
+### 참고URL
+> url(dockerNgnix) : https://frontmulti.tistory.com/69 <br/>
+
+### 내용
 > URL을 참고해서 진행하지만, run을 하지 않고, <br/>
 > create 및 build후 생긴 컨테이터ID를 기준으로 start을 진행한다.
 >> 1. 쉘 스크립트 작성
