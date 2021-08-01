@@ -3,6 +3,7 @@
 > url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
 > url(nodejsSSO) : https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=221175584994&proxyReferer=https:%2F%2Fwww.google.com%2F <br/>
 > url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
+> url(dockerNngix) : https://frontmulti.tistory.com/69 <br/>
 
 ## ngnix(Web)와 nodejs(Was) 연동
 > 예전에는 막연하다고 생각했는데, 의외로 설정이 간단하다. <br/>
@@ -76,3 +77,20 @@ location /{블라블라} {
 ```
 
 
+## docker N Nginx
+> URL을 참고해서 진행하지만, run을 하지 않고, <br/>
+> create 및 build후 생긴 컨테이터ID를 기준으로 start을 진행한다.
+```
+// 작성중...
+1. shell세팅.
+
+2. dockerfile세팅.
+
+3. shell 실행 및 결과
+
+4. docker start `컨테이너ID`
+
+5. 완료.
+
+
+```
