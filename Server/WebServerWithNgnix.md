@@ -124,9 +124,11 @@ echo '['$dockerName'] docker build complete.'
 # 서버는 Dockerfile 이미지 사용
 FROM nginx
 
-WORKDIR /home/abcdefh/usr/tmp/nginx
-
-COPY . .
+# nginx.conf  : http 설정
+# server.conf : server 설정
+# 일단 띄우는게 목적이라면, 아래 두 COPY는 주석처리하고 진행.
+COPY nginx_conf/nginx_http_dev.conf   /etc/nginx/nginx.conf
+COPY nginx_conf/nginx_server_dev.conf /etc/nginx/conf.d/default.conf
 
 ENV NODE_ENV production
 
@@ -172,5 +174,6 @@ CONTAINER ID   IMAGE                                      COMMAND               
 3af7e1a2572e   auto/autobit_fu_moni_real:202105311347     "docker-entrypoint.s…"   2 months ago     Up 2 days          0.0.0.0:9999->9999/tcp    autobit_fu_moni_real
 ```
 <br/>
+
 > 여기까지가 일단 도커를 통해 nginx를 설정하는 방법이다. <br/>
 > 어떤URL로 들어오면 어디 컨테이너로 던져줄지를 설정해야하는데, 이는 관련 Git프로젝트에서 다룬다. <br/>
