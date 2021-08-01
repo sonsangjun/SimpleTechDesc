@@ -95,6 +95,8 @@ location /{블라블라} {
 nginx.conf에 좀 더 세부적으로 설정할 수 있는 내용.
 ```
 #### server_tokens : off;
+> https://goodgid.github.io/Nginx-Option-Server-Tokens/  
+> http://millky.com/@origoni/post/1055  
 > response에 서버 버젼을 노출여부를 결정하는 옵션.
 > off시, 웹서버버젼이 노출되지 않는다.
 
