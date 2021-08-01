@@ -130,6 +130,11 @@ FROM nginx
 COPY nginx_conf/nginx_http_real.conf   /etc/nginx/nginx.conf
 COPY nginx_conf/nginx_server_real.conf /etc/nginx/conf.d/default.conf
 
+# [21.08.01]
+# default.conf의 경우, nginx.conf에서 include 처리되어 있어. 
+# 사실상, default.conf에서 각 컨테이너에 대한 location 설정을 적용하고, nginx.conf는 크게 건들게 없어보인다.
+
+
 ENV NODE_ENV production
 
 ENV PORT 80
