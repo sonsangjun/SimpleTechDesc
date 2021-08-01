@@ -94,6 +94,14 @@ location /{블라블라} {
 ```
 nginx.conf에 좀 더 세부적으로 설정할 수 있는 내용.
 ```
+#### server_tokens : off;
+> response에 서버 버젼을 노출여부를 결정하는 옵션.
+> off시, 웹서버버젼이 노출되지 않는다.
+
+|적용전(server_token:on)|적용후(server_token:off)|
+|--|--|
+|![image](https://user-images.githubusercontent.com/12105781/127770601-0d8ce980-3d63-435b-9288-f3fce0aeca24.png) | ![image](https://user-images.githubusercontent.com/12105781/127770616-79b8d0f7-6810-4d26-8e54-60d423df57fb.png) |
+
 
 ## docker N Nginx
 ### 참고URL
