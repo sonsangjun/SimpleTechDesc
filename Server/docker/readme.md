@@ -51,12 +51,15 @@
      도커 이미지 생성 프로세스에 대한 정의
      
      ex.
-     // Dockerfile
+      # Dockerfile
       FROM node:12
 
       WORKDIR /Users/chihunkoo/Desktop/test
-      // 현재 위치(경로)를 확인하려면 server.js가 위치한 디렉토리에서 'pwd' 명령어를 입력하면 된다.
+      # 현재 위치(경로)를 확인하려면 server.js가 위치한 디렉토리에서 'pwd' 명령어를 입력하면 된다.
 
+      # 가끔 COPY . . 로 작성한 경우가 있는데, 이는
+      # dockerfile이 위치한 현재상대경로에서
+      # WORKDIR의 현재상태경로(/Users/chihunkoo/Desktop/test)로 모든 파일을 복사하라는 의미이다.
       COPY package*.json ./
 
       RUN npm install
