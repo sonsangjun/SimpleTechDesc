@@ -6,6 +6,11 @@
 > url(dockerNgnix) : https://frontmulti.tistory.com/69 <br/>
 > url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
 > url(dockerNet)   : https://phantasmicmeans.tistory.com/entry/Docker-Container-Network%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4 <br/>
+> url(localhost)   : https://velog.io/@lky9303/127.0.0.1-%EA%B3%BC-localhost%EC%9D%98-%EC%B0%A8%EC%9D%B4 <br/>
+```
+localhost와 127.0.0.1에 대한 짤막한 설명. 그냥, 홈페이지 접근시, URL접근이나 IP직접입력 접근이냐를 예제로 들어 설명하는거라 생각하면됨(정말대략적으로...)
+```
+
 ## ngnix(Web)와 nodejs(Was) 연동
 > 예전에는 막연하다고 생각했는데, 의외로 설정이 간단하다. <br/>
 > ng serve로 angular테스트시, proxy.json을 설정하는 경우가 있을 것이다. <br/>
