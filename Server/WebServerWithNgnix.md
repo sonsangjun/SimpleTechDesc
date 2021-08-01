@@ -1,10 +1,18 @@
 # 참고 
 > url(Ngnix) : https://myjamong.tistory.com/9 <br/>
 > url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
-> url(nodejsSSO) : https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=221175584994&proxyReferer=https:%2F%2Fwww.google.com%2F <br/>
-> url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
 > url(dockerNgnix) : https://frontmulti.tistory.com/69 <br/>
 > url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
+> url(nginxSetting) : https://velog.io/@jakeseo_me/Node%EC%97%90%EC%84%9C-NGINX%EB%A5%BC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%ED%94%84%EB%A1%9D%EC%8B%9C%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EB%B2%88%EC%97%AD <br/>
+```
+nginx관련 내용이 담긴 페이지URL.
+
+nginxSetting는 nginx.conf에 좀 더 이런저런 설정할 수 있는 방법을 공유하고 있다.
+
+```
+> url(nodejsSSO) : https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=221175584994&proxyReferer=https:%2F%2Fwww.google.com%2F <br/>
+> url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
+
 > url(dockerNet)   : https://phantasmicmeans.tistory.com/entry/Docker-Container-Network%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4 <br/>
 > url(localhost)   : https://velog.io/@lky9303/127.0.0.1-%EA%B3%BC-localhost%EC%9D%98-%EC%B0%A8%EC%9D%B4 <br/>
 ```
