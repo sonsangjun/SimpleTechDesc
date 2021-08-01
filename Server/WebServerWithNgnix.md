@@ -5,7 +5,7 @@
 > url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
 > url(dockerNgnix) : https://frontmulti.tistory.com/69 <br/>
 > url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
-
+> url(dockerNet)   : https://phantasmicmeans.tistory.com/entry/Docker-Container-Network%EC%97%90-%EB%8C%80%ED%95%9C-%EC%9D%B4%ED%95%B4 <br/>
 ## ngnix(Web)와 nodejs(Was) 연동
 > 예전에는 막연하다고 생각했는데, 의외로 설정이 간단하다. <br/>
 > ng serve로 angular테스트시, proxy.json을 설정하는 경우가 있을 것이다. <br/>
@@ -182,3 +182,33 @@ CONTAINER ID   IMAGE                                      COMMAND               
 
 > 여기까지가 일단 도커를 통해 nginx를 설정하는 방법이다. <br/>
 > 어떤URL로 들어오면 어디 컨테이너로 던져줄지를 설정해야하는데, 이는 관련 Git프로젝트에서 다룬다. <br/>
+
+<br/>
+
+> docker의 nginx세팅시, 주의할 점.  
+> 들어온 URL에 따라 내부적으로 프록시 설정시. location의 proxy_pass를 `location / 127.0.0.1`이 포함된 경로로 설정하면 정상동작하지 않을 수 있다.  
+> docker network구성에 따르면, 172.17.0.1이라는 gateway로 보내되, 포트별로 구분을 두어 프록시해야한다.  
+
+```
+# 예시.
+
+server {
+    ...
+    
+    # [21.08.01] 통계API 프록시
+    # Common. docker로 구성시, localhost/127.0.0.1을 입력하면 접근을 못한다.
+    # 실제, docker내부로 접속하여 해당컨터이너에 할당된 IP를 입력해야한다.
+    location /statics {
+        # proxy_pass http://127.0.0.1:8201/statics;  ==> docker가 아닌 현재 물리서버의 루프백        (동작안함)
+        proxy_pass http://172.17.0.1:8201/statics;   ==> docker network (gateway에 해당하는)로 접근 (동작함)
+        charset utf-8;
+    }
+    
+    ...
+    
+}
+    
+...
+
+
+
