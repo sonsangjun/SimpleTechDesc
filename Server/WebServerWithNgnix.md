@@ -1,12 +1,4 @@
 # 참고 
-> url(Ngnix) : https://myjamong.tistory.com/9 <br/>
-> url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
-```
-nginx관련 내용이 담긴 페이지URL.
-
-nginxSetting는 nginx.conf에 좀 더 이런저런 설정할 수 있는 방법을 공유하고 있다.
-
-```
 > url(nodejsSSO) : https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=221175584994&proxyReferer=https:%2F%2Fwww.google.com%2F <br/>
 > url(Ag9Proxy) : https://daddyprogrammer.org/post/4245/angular2-httpclient-proxy/ <br/>
 
@@ -17,6 +9,12 @@ localhost와 127.0.0.1에 대한 짤막한 설명. 그냥, 홈페이지 접근�
 ```
 
 ## ngnix(Web)와 nodejs(Was) 연동
+### 참고URL
+> url(Ngnix) : https://myjamong.tistory.com/9 <br/>
+> url(Ngnix) : https://velog.io/@jeff0720/2018-11-18-2111-%EC%9E%91%EC%84%B1%EB%90%A8-iojomvsf0n <br/>
+> url(리버스프록시) : https://velog.io/@jakeseo_me/Node%EC%97%90%EC%84%9C-NGINX%EB%A5%BC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%ED%94%84%EB%A1%9D%EC%8B%9C%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EB%B2%88%EC%97%AD <br/>
+
+### 내용
 > 예전에는 막연하다고 생각했는데, 의외로 설정이 간단하다. <br/>
 > ng serve로 angular테스트시, proxy.json을 설정하는 경우가 있을 것이다. <br/>
 
@@ -77,7 +75,7 @@ location /{블라블라} {
 
 // 2. 
 location /{블라블라} {
-    proxy_pass http://127.0.0.1:8001;
+    proxy_pass http://127.0.0.1:8001; # docker간의 프록시면 `172.17.0.1:포트`식으로 기술해야한다.
 }
 
 
@@ -91,11 +89,10 @@ location /{블라블라} {
 ### 참고URL
 > https://extrememanual.net/9976 <br/>
 > url(nginxDetail) : https://gigas-blog.tistory.com/233 <br/>
-> url(nginxSetting) : https://velog.io/@jakeseo_me/Node%EC%97%90%EC%84%9C-NGINX%EB%A5%BC-%EB%A6%AC%EB%B2%84%EC%8A%A4-%ED%94%84%EB%A1%9D%EC%8B%9C%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EB%B2%88%EC%97%AD <br/>
 
 ### 내용
 ```
-
+nginx.conf에 좀 더 세부적으로 설정할 수 있는 내용.
 ```
 
 ## docker N Nginx
