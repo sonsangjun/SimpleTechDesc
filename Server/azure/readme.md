@@ -21,6 +21,27 @@
 
 ```
 
+### DNS 설정
+> 참고URL :
+> https://diane-space.tistory.com/225 <br/>
+> https://brunch.co.kr/@topasvga/173 <br/>
+> https://velog.io/@ruddms936/Domain-name-%EC%84%A4%EC%A0%95 <br/>
+> 
+```
+ 사이트 여러군데를 다 읽어봤는데,
+ 
+ Azure에 나와있는 domain name server 1,2,3,4 의 존재이유를 알게되었다.
+ 저거를 도메인서버 관리회사에 등록요청을 해야한다.
+ (한국은 도레지닷컴 같다.)
+ (물론, 그 전에 www같은 URL을 미리 등록하고 진행해야한다.)
+ 
+ 물론, 돈이 든다. 
+ 돈도 돈인데, 이거 은근 귀찮네...
+ 
+ 그렇다고 IP를 계속 노출시키기도...
+
+```
+
 ## 확인사항.
 
 ```
