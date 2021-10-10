@@ -239,6 +239,11 @@ server {
     
 }
     
-...
+```
 
 
+## 서버 공격패턴
+> 참고 https://tech.yeon.me/blog/%ec%9a%94%ec%a6%98-%ec%9e%90%ec%a3%bc-%eb%b3%b4%ec%9d%b4%eb%8a%94-%ec%9b%b9%ec%82%ac%ec%9d%b4%ed%8a%b8-%ea%b3%b5%ea%b2%a9-%ed%8c%a8%ed%84%b4/#comment-5  
+
+클라우드 서버긴 하지만, 운영중에 있어 참고할 만한 내용같아서 링크만 남겨둔다.  
+(실제 로그에서 봤던 내용도 있어,,, 요녀석들 참 집요하다 싶다.)  
