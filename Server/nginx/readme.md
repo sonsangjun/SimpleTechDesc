@@ -195,6 +195,17 @@ SSL은 아직까지 무료인 `클라우드 플레어`를 이용한다.
          ssl_verify_client on;
          ssl_client_certificate /etc/nginx/conf.d/cloudflare.crt;
 
+
+cloudflare.crt 는 cloudflare사이트에서 받아야한다.
+원본서버의 
+
+`인증된 원본 끌어오기 옵션` 활성화 (이거 꼭 활성화 필요)
+및 하단의 
+`도움말` 클릭.
+
+nginx example을 찾아서, 인증서내용을 받으면 된다.
+(받아서 원본서버의 ssl_client_certificate로 설정한 경로에 위치시키면 된다.)
+
 ```
 
 |명칭|설명|
