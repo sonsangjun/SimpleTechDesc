@@ -77,11 +77,11 @@
 ```
 
 ### SSL 설정
-> 참고 : (SSL 설정)    https://codens.info/1963, https://jackerlab.com/nginx-https-lets-encrypt/
-> 참고 : (IP우회차단)  https://tech.yeon.me/blog/cloudflare%EA%B3%BC-nginx-%EA%B4%80%EB%A0%A8-%EB%AA%87-%EA%B0%80%EC%A7%80-%ED%8C%81-4-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%9D%B8%EC%A6%9D%EB%90%9C/
-> 참고 : (가입방법)    https://blog.wsgvet.com/cloudflare-sign-in-and-change-nameserver/
-> 참고 : (가입방법)    https://wonderbout.tistory.com/119
-> 참고 : (docker-Port) https://dev.plusblog.co.kr/24
+> 참고 : (SSL 설정)    https://codens.info/1963, https://jackerlab.com/nginx-https-lets-encrypt/  
+> 참고 : (IP우회차단)  https://tech.yeon.me/blog/cloudflare%EA%B3%BC-nginx-%EA%B4%80%EB%A0%A8-%EB%AA%87-%EA%B0%80%EC%A7%80-%ED%8C%81-4-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%9D%B8%EC%A6%9D%EB%90%9C/  
+> 참고 : (가입방법)    https://blog.wsgvet.com/cloudflare-sign-in-and-change-nameserver/  
+> 참고 : (가입방법)    https://wonderbout.tistory.com/119  
+> 참고 : (docker-Port) https://dev.plusblog.co.kr/24  
 
 
 ```
