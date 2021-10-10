@@ -182,3 +182,25 @@ SSL은 아직까지 무료인 `클라우드 플레어`를 이용한다.
 
 8.  만약, docker를 통해 nginx를 기동중이라면, 최초 컨테이너 생성시 -p 443:443 설정여부를 확인한다.
     (80:80만 설정시, SSL설정하더라도 서버가 응답하지 않아 CloudFlare 521 응답코드를 받게 될 것이다.)
+```
+
+### [기타] IP접근 막기.
+> 참고 : https://tech.yeon.me/blog/cloudflare%ea%b3%bc-nginx-%ea%b4%80%eb%a0%a8-%eb%aa%87-%ea%b0%80%ec%a7%80-%ed%8c%81-4-%ed%81%b4%eb%9d%bc%ec%9d%b4%ec%96%b8%ed%8a%b8-%ec%9d%b8%ec%a6%9d%ec%84%9c-%ec%9d%b8%ec%a6%9d%eb%90%9c/  
+> 위에 nginx 스크립트 중 `ssl_verify_client` 옵션이 있다.  
+> 자세한 내용은 링크를 참고하면 되고, 여기서 간단하게 기술  
+
+```
+
+         # Block IP access. (using Cloudflare, 필요없으면 주석처리)
+         ssl_verify_client on;
+         ssl_client_certificate /etc/nginx/conf.d/cloudflare.crt;
+
+```
+
+|명칭|설명|
+|---|---|
+|ssl_verify_client| 클라이언트의 인증서 유효성 체크여부<br/>on:예, 인증서를 들고오지 않으면 통과할 수 없다. /<br/>off:아니오, 인증서가 있든 말든 어여들어가.) |
+|ssl_client_certificate| 클라이언트가 들고올 인증서 원본. 이녀석과 클라의 인증서를 대조하는 걸로 추측됨. <br/>인증서 존재시 : URL에 해당하는 페이지 노출 <br/>인증서 없으면:400 에러 반환.|
+
+해당기능 적용시.  
+https://(ipAddress)/ 로 접근을 시도하더라도, 어떠한 내용도 볼 수 없다.  
