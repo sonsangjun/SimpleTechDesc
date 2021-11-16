@@ -17,6 +17,7 @@ nodejs를 이용한 서버를 작성한 시점이라서, node설정에 관한 �
 
 |명칭|설명|
 |--|--|
+|Live Server|로컬에 nginx나 was따로 안띄워도 된다. 이걸로 그냥 퉁치면 됨|
 |Prettier | 코드 작성시, 자동 정리(포맷팅)
 |Vetur | 개발툴
 |vue | Vue 문법 검사
