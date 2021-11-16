@@ -29,7 +29,7 @@ npm install vue-loader vue-templete-compiler -D
 ```
 
 
-* D는 개발시에만 사용하겠다고 약속 (package.json에 devDependencies에 추가됨).  
+* -D는 개발시에만 사용하겠다고 약속 (package.json의 devDependencies에 추가됨).  
 * npm 을 통한 설치전에, npm init를 통해 package.json을 생성하는 초기화 과정이 필수.  
 * vue/vue-template-compiler 버젼은 모두 동일하게 유지해야하며, 버전 미 기록시 `최신 버전으로 설치된다.`  
   (설치시 버전설정은 `vue@2.6.0` `vue-template-compiler@2.6.0` 처럼 하면 된다.)  
