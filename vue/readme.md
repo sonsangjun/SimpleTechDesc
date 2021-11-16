@@ -32,7 +32,7 @@ npm install vue-loader vue-templete-compiler -D
 * D는 개발시에만 사용하겠다고 약속 (package.json에 devDependencies에 추가됨).  
 * npm 을 통한 설치전에, npm init를 통해 package.json을 생성하는 초기화 과정이 필수.  
 * vue/vue-template-compiler 버젼은 모두 동일하게 유지해야하며, 버전 미 기록시 `최신 버전으로 설치된다.`  
-  (설치시 버전설정은 `vue@2.6.0``vue-template-compiler@2.6.0` 처럼 하면 된다.)  
+  (설치시 버전설정은 `vue@2.6.0` `vue-template-compiler@2.6.0` 처럼 하면 된다.)  
 * 간단하게 제작하려면, webpack 설치하지 말고, html에 templete/script를 모두 작성하면 된다.  
   (vue는 `<script src='https://cdn.jsdelivr.net/npm/vue@2.6.0'></script>`로 삽입하면 된다.)  
   (정말 테스트 용으로만 사용하고, 실제 개발에는 권하지 않는다. 너무 손이 많이가...)  
