@@ -1,7 +1,8 @@
 ## 개요
 > vue 관련 내용을 정리한 폴더이다.
 
-## 초기설정
+## 설정방법
+### 직접설정(vue init 미사용)
 > URL
 ```
 (vue)        https://doncolmi.github.io/Vue-1/
@@ -13,7 +14,7 @@
 nodejs를 이용한 서버를 작성한 시점이라서, node설정에 관한 내용은 URL참고할 것.  
 <br/>
 
-### npm을 통한 설치 대상
+#### npm을 통한 설치 대상
 ```
 목록
 webpack
@@ -37,7 +38,7 @@ npm install vue-loader vue-templete-compiler -D
   (vue는 `<script src='https://cdn.jsdelivr.net/npm/vue@2.6.0'></script>`로 삽입하면 된다.)  
   (정말 테스트 용으로만 사용하고, 실제 개발에는 권하지 않는다. 너무 손이 많이가...)  
 
-### VSCode 설정시, 사용한 플러그인 항목
+#### VSCode 설정시, 사용한 플러그인 항목
 
 |명칭|설명|
 |--|--|
@@ -62,3 +63,18 @@ html로 작성하고, 해당 페이지의 오른쪽 마우스 클릭후 나타�
 
 ![image](https://user-images.githubusercontent.com/12105781/141991296-60a65ef5-af79-4a1f-9e27-7c7612b0ad1e.png)
 
+
+
+### Vue init을 통한 설정
+> Vue-cli 3버전대부터 이렇게 설정이 가능하다.  
+> 다만, webpack.config.js를 root에 두는게 아니라, 내부적으로 관리한다구 한다.  
+> 직접 수정은 좀 그렇고, `vue.config.js`파일이 있어, 그걸 수정하면 된다.  
+> 위의 설정방법은, webpack-vue가 어떻게 연동되는지(구조)를 알 수 있는 좋은 방식이다.  
+
+```
+프로젝트 만들고, 아래 명령어를 입력한다.
+(물론, 프로젝트 경로 root에 들어와야 한다. VSCode에서 터미널을 열면 바로 위치해있고,
+ 아니라면, cd명령어로 찾아들어오면 된다.)
+ 
+ vue init
+ ```
