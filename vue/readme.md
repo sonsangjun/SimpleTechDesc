@@ -65,7 +65,8 @@ html로 작성하고, 해당 페이지의 오른쪽 마우스 클릭후 나타�
 
 
 
-### Vue init을 통한 설정
+### Vue init을 통한 설정 (작업중..., 올바르지 않은 내용입니다. 참고하지 마세요!)
+
 > Vue-cli 3버전대부터 이렇게 설정이 가능하다.  
 > 다만, webpack.config.js를 root에 두는게 아니라, 내부적으로 관리한다구 한다.  
 > 직접 수정은 좀 그렇고, `vue.config.js`파일이 있어, 그걸 수정하면 된다.  
@@ -78,3 +79,20 @@ html로 작성하고, 해당 페이지의 오른쪽 마우스 클릭후 나타�
  
  vue init
  ```
+ 
+ > vue init 실행중 보안오류 발생시. 
+ > 참고 : https://www.inflearn.com/questions/17423
+ > 참고(@의미) : https://stackoverflow.com/questions/36667258/what-is-the-meaning-of-the-at-prefix-on-npm-packages
+ ```
+ 아래 명령어 실행할 것. (윈도우 환경만)
+ vue.cmd create vue-cli
+ 
+ 그런데, vue-cli 버젼이 3미만이면 아래 메시지가 추가로 나타난다.
+  vue create is a Vue CLI 3 only command and you are using Vue CLI 2.9.6.
+  You may want to run the following to upgrade to Vue CLI 3:
+
+  npm uninstall -g vue-cli
+  npm install -g @vue/cli
+  
+  
+~~
