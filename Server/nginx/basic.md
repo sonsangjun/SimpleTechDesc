@@ -247,3 +247,25 @@ server {
 
 클라우드 서버긴 하지만, 운영중에 있어 참고할 만한 내용같아서 링크만 남겨둔다.  
 (실제 로그에서 봤던 내용도 있어,,, 요녀석들 참 집요하다 싶다.)  
+
+## 로드밸런싱 설정\
+> 참고 https://kamang-it.tistory.com/entry/WebServernginxnginx%EB%A1%9C-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1-%ED%95%98%EA%B8%B0
+생각보다 간단하다.  
+향후, 로그인같은 기능만들면, 서버를 두대로 하거나, 아니면 docker 컨테이너를 두대를 띄우거나 하면 해당기능으로 로드밸런싱해도 되겠다.  
+간단한 스크립트를 기술한다.  
+
+```nginx
+upstream loadbanance {
+ ip_hash; # 로드밸런스 타입, 필요없으면 값 넣지말자. 그러면 기본인 라운드 로빈으로 밸런싱한다.
+ server 192.168.0.2:8080;
+ server 192.168.0.2:8090;
+} 
+
+server {
+ listen 80;
+ location /api/vi {
+  proxy_pass http://loadbanance;  # upstream 이름을 넣는다. 
+ }
+}
+
+
